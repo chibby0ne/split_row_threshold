@@ -8,17 +8,6 @@ SET(CMAKE_RELATIVE_PATH_TOP_BINARY "/home/tesla/chain/split_row_threshold/softwa
 # Force unix paths in dependencies.
 SET(CMAKE_FORCE_UNIX_PATHS 1)
 
-# The C and CXX include file search paths:
-SET(CMAKE_C_INCLUDE_PATH
-  "../../cse/include"
-  "../../ems/include"
-  "/usr/local/itpp/include"
-  "../ldpc_dec"
-  "../ldpc_enc"
-  )
-SET(CMAKE_CXX_INCLUDE_PATH ${CMAKE_C_INCLUDE_PATH})
-SET(CMAKE_Fortran_INCLUDE_PATH ${CMAKE_C_INCLUDE_PATH})
-SET(CMAKE_ASM_INCLUDE_PATH ${CMAKE_C_INCLUDE_PATH})
 
 # The C and CXX include file regular expressions for this directory.
 SET(CMAKE_C_INCLUDE_REGEX_SCAN "^.*$")

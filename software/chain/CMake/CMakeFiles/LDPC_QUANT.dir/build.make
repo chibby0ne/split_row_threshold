@@ -31,6 +31,9 @@ CMAKE_COMMAND = /usr/bin/cmake
 # The command to remove a file.
 RM = /usr/bin/cmake -E remove -f
 
+# Escaping for special characters.
+EQUALS = =
+
 # The top-level source directory on which CMake was run.
 CMAKE_SOURCE_DIR = /home/tesla/chain/split_row_threshold/software/chain/CMake
 
@@ -50,15 +53,15 @@ CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/WP
 CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/WPAN_chain.cpp.o: /home/tesla/chain/split_row_threshold/software/chain/WPAN_chain.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/tesla/chain/split_row_threshold/software/chain/CMake/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/WPAN_chain.cpp.o"
-	/usr/bin/g++-4.5   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/WPAN_chain.cpp.o -c /home/tesla/chain/split_row_threshold/software/chain/WPAN_chain.cpp
+	/usr/bin/g++-4.4   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/WPAN_chain.cpp.o -c /home/tesla/chain/split_row_threshold/software/chain/WPAN_chain.cpp
 
 CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/WPAN_chain.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/WPAN_chain.cpp.i"
-	/usr/bin/g++-4.5  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tesla/chain/split_row_threshold/software/chain/WPAN_chain.cpp > CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/WPAN_chain.cpp.i
+	/usr/bin/g++-4.4  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tesla/chain/split_row_threshold/software/chain/WPAN_chain.cpp > CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/WPAN_chain.cpp.i
 
 CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/WPAN_chain.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/WPAN_chain.cpp.s"
-	/usr/bin/g++-4.5  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tesla/chain/split_row_threshold/software/chain/WPAN_chain.cpp -o CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/WPAN_chain.cpp.s
+	/usr/bin/g++-4.4  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tesla/chain/split_row_threshold/software/chain/WPAN_chain.cpp -o CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/WPAN_chain.cpp.s
 
 CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/WPAN_chain.cpp.o.requires:
 .PHONY : CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/WPAN_chain.cpp.o.requires
@@ -73,15 +76,15 @@ CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ld
 CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_enc/enc_ldpc_bin_struct_share.cpp.o: /home/tesla/chain/split_row_threshold/software/chain/ldpc_enc/enc_ldpc_bin_struct_share.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/tesla/chain/split_row_threshold/software/chain/CMake/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_enc/enc_ldpc_bin_struct_share.cpp.o"
-	/usr/bin/g++-4.5   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_enc/enc_ldpc_bin_struct_share.cpp.o -c /home/tesla/chain/split_row_threshold/software/chain/ldpc_enc/enc_ldpc_bin_struct_share.cpp
+	/usr/bin/g++-4.4   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_enc/enc_ldpc_bin_struct_share.cpp.o -c /home/tesla/chain/split_row_threshold/software/chain/ldpc_enc/enc_ldpc_bin_struct_share.cpp
 
 CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_enc/enc_ldpc_bin_struct_share.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_enc/enc_ldpc_bin_struct_share.cpp.i"
-	/usr/bin/g++-4.5  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tesla/chain/split_row_threshold/software/chain/ldpc_enc/enc_ldpc_bin_struct_share.cpp > CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_enc/enc_ldpc_bin_struct_share.cpp.i
+	/usr/bin/g++-4.4  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tesla/chain/split_row_threshold/software/chain/ldpc_enc/enc_ldpc_bin_struct_share.cpp > CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_enc/enc_ldpc_bin_struct_share.cpp.i
 
 CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_enc/enc_ldpc_bin_struct_share.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_enc/enc_ldpc_bin_struct_share.cpp.s"
-	/usr/bin/g++-4.5  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tesla/chain/split_row_threshold/software/chain/ldpc_enc/enc_ldpc_bin_struct_share.cpp -o CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_enc/enc_ldpc_bin_struct_share.cpp.s
+	/usr/bin/g++-4.4  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tesla/chain/split_row_threshold/software/chain/ldpc_enc/enc_ldpc_bin_struct_share.cpp -o CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_enc/enc_ldpc_bin_struct_share.cpp.s
 
 CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_enc/enc_ldpc_bin_struct_share.cpp.o.requires:
 .PHONY : CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_enc/enc_ldpc_bin_struct_share.cpp.o.requires
@@ -96,15 +99,15 @@ CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ld
 CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_enc/enc_ldpc_ieee_802_11ad.cpp.o: /home/tesla/chain/split_row_threshold/software/chain/ldpc_enc/enc_ldpc_ieee_802_11ad.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/tesla/chain/split_row_threshold/software/chain/CMake/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_enc/enc_ldpc_ieee_802_11ad.cpp.o"
-	/usr/bin/g++-4.5   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_enc/enc_ldpc_ieee_802_11ad.cpp.o -c /home/tesla/chain/split_row_threshold/software/chain/ldpc_enc/enc_ldpc_ieee_802_11ad.cpp
+	/usr/bin/g++-4.4   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_enc/enc_ldpc_ieee_802_11ad.cpp.o -c /home/tesla/chain/split_row_threshold/software/chain/ldpc_enc/enc_ldpc_ieee_802_11ad.cpp
 
 CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_enc/enc_ldpc_ieee_802_11ad.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_enc/enc_ldpc_ieee_802_11ad.cpp.i"
-	/usr/bin/g++-4.5  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tesla/chain/split_row_threshold/software/chain/ldpc_enc/enc_ldpc_ieee_802_11ad.cpp > CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_enc/enc_ldpc_ieee_802_11ad.cpp.i
+	/usr/bin/g++-4.4  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tesla/chain/split_row_threshold/software/chain/ldpc_enc/enc_ldpc_ieee_802_11ad.cpp > CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_enc/enc_ldpc_ieee_802_11ad.cpp.i
 
 CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_enc/enc_ldpc_ieee_802_11ad.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_enc/enc_ldpc_ieee_802_11ad.cpp.s"
-	/usr/bin/g++-4.5  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tesla/chain/split_row_threshold/software/chain/ldpc_enc/enc_ldpc_ieee_802_11ad.cpp -o CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_enc/enc_ldpc_ieee_802_11ad.cpp.s
+	/usr/bin/g++-4.4  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tesla/chain/split_row_threshold/software/chain/ldpc_enc/enc_ldpc_ieee_802_11ad.cpp -o CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_enc/enc_ldpc_ieee_802_11ad.cpp.s
 
 CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_enc/enc_ldpc_ieee_802_11ad.cpp.o.requires:
 .PHONY : CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_enc/enc_ldpc_ieee_802_11ad.cpp.o.requires
@@ -119,15 +122,15 @@ CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ld
 CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp.o: /home/tesla/chain/split_row_threshold/software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/tesla/chain/split_row_threshold/software/chain/CMake/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp.o"
-	/usr/bin/g++-4.5   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp.o -c /home/tesla/chain/split_row_threshold/software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp
+	/usr/bin/g++-4.4   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp.o -c /home/tesla/chain/split_row_threshold/software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp
 
 CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp.i"
-	/usr/bin/g++-4.5  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tesla/chain/split_row_threshold/software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp > CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp.i
+	/usr/bin/g++-4.4  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tesla/chain/split_row_threshold/software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp > CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp.i
 
 CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp.s"
-	/usr/bin/g++-4.5  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tesla/chain/split_row_threshold/software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp -o CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp.s
+	/usr/bin/g++-4.4  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tesla/chain/split_row_threshold/software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp -o CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp.s
 
 CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp.o.requires:
 .PHONY : CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp.o.requires
@@ -142,15 +145,15 @@ CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ld
 CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_dec/dec_ldpc_ieee_802_11ad.cpp.o: /home/tesla/chain/split_row_threshold/software/chain/ldpc_dec/dec_ldpc_ieee_802_11ad.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/tesla/chain/split_row_threshold/software/chain/CMake/CMakeFiles $(CMAKE_PROGRESS_5)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_dec/dec_ldpc_ieee_802_11ad.cpp.o"
-	/usr/bin/g++-4.5   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_dec/dec_ldpc_ieee_802_11ad.cpp.o -c /home/tesla/chain/split_row_threshold/software/chain/ldpc_dec/dec_ldpc_ieee_802_11ad.cpp
+	/usr/bin/g++-4.4   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_dec/dec_ldpc_ieee_802_11ad.cpp.o -c /home/tesla/chain/split_row_threshold/software/chain/ldpc_dec/dec_ldpc_ieee_802_11ad.cpp
 
 CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_dec/dec_ldpc_ieee_802_11ad.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_dec/dec_ldpc_ieee_802_11ad.cpp.i"
-	/usr/bin/g++-4.5  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tesla/chain/split_row_threshold/software/chain/ldpc_dec/dec_ldpc_ieee_802_11ad.cpp > CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_dec/dec_ldpc_ieee_802_11ad.cpp.i
+	/usr/bin/g++-4.4  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tesla/chain/split_row_threshold/software/chain/ldpc_dec/dec_ldpc_ieee_802_11ad.cpp > CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_dec/dec_ldpc_ieee_802_11ad.cpp.i
 
 CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_dec/dec_ldpc_ieee_802_11ad.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_dec/dec_ldpc_ieee_802_11ad.cpp.s"
-	/usr/bin/g++-4.5  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tesla/chain/split_row_threshold/software/chain/ldpc_dec/dec_ldpc_ieee_802_11ad.cpp -o CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_dec/dec_ldpc_ieee_802_11ad.cpp.s
+	/usr/bin/g++-4.4  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tesla/chain/split_row_threshold/software/chain/ldpc_dec/dec_ldpc_ieee_802_11ad.cpp -o CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_dec/dec_ldpc_ieee_802_11ad.cpp.s
 
 CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_dec/dec_ldpc_ieee_802_11ad.cpp.o.requires:
 .PHONY : CMakeFiles/LDPC_QUANT.dir/home/tesla/chain/split_row_threshold/software/chain/ldpc_dec/dec_ldpc_ieee_802_11ad.cpp.o.requires

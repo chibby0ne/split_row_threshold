@@ -47,6 +47,14 @@ int main(int argc, char* argv[]) {
 	Statistics_Error_Rates<2> error_rates_decoding;
 	error_rates_decoding.instance_name("error_rates_decoding");
 
+    // files used to write values
+    ofstream input_source;
+    ofstream input_decoder;
+    ofstream output_decoder;
+
+    input_source.open("input_source.txt");
+    input_decoder.open("input_decoder.txt");
+    output_decoder.open("output_decoder.txt");
 
 	// Connect modules
 	encoder.input_bits(source_bits.output_bits());
@@ -76,15 +84,29 @@ int main(int argc, char* argv[]) {
 
 		do {
 			source_bits.Run();
+            // input_source << "Starting message" << endl;
+            // input_source << source_bits.output_bits() << endl;
+            // input_source << "Ending message" << endl;
+
 			encoder.Run();
+
+
 			mapper.Run();
 
 			channel.Run();
 
 			demapper.Run();
 			converter.Run();
+
+            // input_decoder << "Starting message" << endl;
+            // input_decoder << decoder.input_bits_llr() << endl;
+            // input_decoder << "Ending message" << endl;
+
 			decoder.Run();
 
+            // output_decoder << "Starting message" << endl;
+            // output_decoder << decoder.output_bits() << endl;
+            // output_decoder << "Ending message" << endl;
 
 			result = error_rates_decoding.Run(); 
 		} while (result == 0);
