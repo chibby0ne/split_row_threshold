@@ -396,10 +396,10 @@ unsigned int Decoder_LDPC_Binary_HW_Share::Decode_Layered(Buffer<int, 2> &app_ra
 	unsigned int ok_checks = 0;
 
     if (!input_cn.is_open()) {
-        input_cn.open("input_cn_layered.txt");
-        output_cn.open("output_cn_layered.txt");
-        input_app.open("input_app_layered.txt");
-        output_app.open("output_app_layered.txt");
+        input_cn.open("input_cn_layered_high_SNR.txt");
+        output_cn.open("output_cn_layered_high_SNR.txt");
+        input_app.open("input_app_layered_high_SNR.txt");
+        output_app.open("output_app_layered_high_SNR.txt");
     }
 
 	// Iterate over all check node groups.

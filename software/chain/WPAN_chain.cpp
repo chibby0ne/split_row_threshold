@@ -16,6 +16,9 @@ using namespace cse_lib;
 
 int main(int argc, char* argv[]) {
 
+    int codewords = 0;
+    int snr = 1;
+
 	string configfile = "config.xml";
 	if (argc >= 2)
 		configfile = argv[1];
@@ -48,13 +51,34 @@ int main(int argc, char* argv[]) {
 	error_rates_decoding.instance_name("error_rates_decoding");
 
     // files used to write values
-    ofstream input_source;
+    // ofstream input_source;
     ofstream input_decoder;
     ofstream output_decoder;
 
-    input_source.open("input_source.txt");
-    input_decoder.open("input_decoder.txt");
-    output_decoder.open("output_decoder.txt");
+    // input_source.open("input_source.txt");
+    // input_decoder.open("input_decoder.txt");
+    // output_decoder.open("output_decoder.txt");
+    // input_decoder_test.open("input_decoder_test.txt");
+    
+    // input_source.open("input_source_high_SNR.txt");
+    // input_decoder.open("input_decoder_high_SNR.txt");
+    // output_decoder.open("output_decoder_high_SNR.txt");
+    // input_decoder_test.open("input_decoder_test_high_SNR.txt");
+
+    // input_decoder.open("input_decoder_allsnr_r050.txt");
+    // output_decoder.open("output_decoder_allsnr_r050.txt");
+
+    // input_decoder.open("input_decoder_allsnr_r062.txt");
+    // output_decoder.open("output_decoder_allsnr_r062.txt");
+
+    // input_decoder.open("input_decoder_allsnr_r075.txt");
+    // output_decoder.open("output_decoder_allsnr_r075.txt");
+    
+    input_decoder.open("input_decoder_allsnr_r081.txt");
+    output_decoder.open("output_decoder_allsnr_r081.txt");
+
+
+
 
 	// Connect modules
 	encoder.input_bits(source_bits.output_bits());
@@ -84,10 +108,8 @@ int main(int argc, char* argv[]) {
 
 		do {
 			source_bits.Run();
-            // input_source << "Starting message" << endl;
-            // input_source << source_bits.output_bits() << endl;
-            // input_source << "Ending message" << endl;
 
+            
 			encoder.Run();
 
 
@@ -98,17 +120,39 @@ int main(int argc, char* argv[]) {
 			demapper.Run();
 			converter.Run();
 
-            // input_decoder << "Starting message" << endl;
-            // input_decoder << decoder.input_bits_llr() << endl;
-            // input_decoder << "Ending message" << endl;
+            if (codewords == 0) {
+                input_decoder << "SNR: " << snr << endl;
+            }
+            input_decoder << "Starting codeword" << endl;
+            // for (unsigned int i = 0; i != 672; i++) {
+            //     input_decoder << decoder.input_bits_llr()[i] << endl;
+            // }
+            input_decoder << decoder.input_bits_llr() << endl;
+            input_decoder << "Ending codeword" << endl;
 
-			decoder.Run();
 
-            // output_decoder << "Starting message" << endl;
-            // output_decoder << decoder.output_bits() << endl;
-            // output_decoder << "Ending message" << endl;
+            decoder.Run();
 
-			result = error_rates_decoding.Run(); 
+
+            if (codewords == 0) {
+                output_decoder << "SNR: " << snr << endl;
+            }
+            output_decoder << "Starting codeword" << endl;
+            // for (unsigned i = 0; i != 10; i++) {                            // iterations
+            //     for (unsigned int j = 0; j != 672; j++) {                   // outputs
+            //         output_decoder << decoder.output_bits()[i][j] << endl;
+            //     }
+            // }
+            output_decoder << decoder.output_bits() << endl;
+            output_decoder << "Ending codeword" << endl;
+
+            codewords++;
+            if (codewords == 10) {
+                snr++;
+                codewords = 0;
+            }
+
+            result = error_rates_decoding.Run(); 
 		} while (result == 0);
 
 		xml_result.Create_Iteration_Value_Result_Point(xml_config);  // Create a new iteration value XML tree to store the modules results (uses xml_config to as a template for results)
