@@ -95,7 +95,7 @@ CHANNEL_BASED	software/ems/mimo_detection/mimo_detection_sphere_param.h	/^		NONE
 CHANNEL_INTERF_H_	software/cse/modules/transmit/channel_iface.h	14;"	d
 CHANNEL_RELIABILITY_ENUM	software/cse/modules/transmit/demapper_param.h	/^	enum CHANNEL_RELIABILITY_ENUM {OPTIMAL_CRF, FIXED_CRF};$/;"	g	class:cse_lib::Demapper_Parameter
 CHECK_ERROR	software/cse/third_party/pugixml/pugixml.cpp	1893;"	d	file:
-CHECK_NODE_ENUM	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.h	/^	enum CHECK_NODE_ENUM {$/;"	g	class:cse_lib::Decoder_LDPC_Binary_HW_Share
+CHECK_NODE_ENUM	software/chain/ldpc_dec/dec_ldpc_check_node_share.h	/^	enum CHECK_NODE_ENUM {$/;"	g	class:cse_lib::Decoder_LDPC_Check_Node_Share
 CMAKE_BINARY_DIR	software/chain/CMake/Makefile	/^CMAKE_BINARY_DIR = \/home\/tesla\/chain\/split_row_threshold\/software\/chain\/CMake$/;"	m
 CMAKE_COMMAND	software/chain/CMake/Makefile	/^CMAKE_COMMAND = \/usr\/bin\/cmake$/;"	m
 CMAKE_SOURCE_DIR	software/chain/CMake/Makefile	/^CMAKE_SOURCE_DIR = \/home\/tesla\/chain\/split_row_threshold\/software\/chain\/CMake$/;"	m
@@ -331,11 +331,11 @@ CONV_SHARE_H_	software/ems/channel_codes_conv/conv_share.h	12;"	d
 COPY_BUFFER	software/cse/assistance/buffer_abstract.h	/^	enum BUFFER_TYPE_ENUM {COPY_BUFFER, VIEW_ON_BUFFER};$/;"	e	enum:Buffer_Abstract::BUFFER_TYPE_ENUM
 CSE_LIB_H_	software/cse/include/cse_lib.h	8;"	d
 CSE_NAMESPACE_H_	software/cse/modules/base/cse_namespace.h	13;"	d
-Calc_Flipped_Bits	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^unsigned int Decoder_LDPC_Binary_HW_Share::Calc_Flipped_Bits(unsigned int iter, Buffer<unsigned int, 2> &output_bits)$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
-Calc_Modified_Systematic_Bits	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^unsigned int Decoder_LDPC_Binary_HW_Share::Calc_Modified_Systematic_Bits(unsigned int             iter,$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
-Calc_Parity_Check	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^unsigned int Decoder_LDPC_Binary_HW_Share::Calc_Parity_Check(Buffer<int> &values)$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
+Calc_Flipped_Bits	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^        unsigned int Decoder_LDPC_Binary_HW_Share<T>::Calc_Flipped_Bits(unsigned int iter, Buffer<unsigned int, 2> &output_bits)$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
+Calc_Modified_Systematic_Bits	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^        unsigned int Decoder_LDPC_Binary_HW_Share<T>::Calc_Modified_Systematic_Bits(unsigned int             iter,$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
+Calc_Parity_Check	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^        unsigned int Decoder_LDPC_Binary_HW_Share<T>::Calc_Parity_Check(Buffer<T> &values)$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
 Calc_Throughput	software/cse/modules/source_sink/stat_error_rates_share.h	/^	float Calc_Throughput(ull_int amount_of_data)$/;"	f	class:cse_lib::Statistics_Error_Rates_Share
-Change_Shift_Direction	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^void Decoder_LDPC_Binary_HW_Share::Change_Shift_Direction()$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
+Change_Shift_Direction	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^        void Decoder_LDPC_Binary_HW_Share<T>::Change_Shift_Direction()$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
 Change_Shift_Direction	software/chain/ldpc_enc/enc_ldpc_bin_struct_share.cpp	/^void Encoder_LDPC_Binary_Struct_Share::Change_Shift_Direction(bool lower_triangular_form)$/;"	f	class:cse_lib::Encoder_LDPC_Binary_Struct_Share
 Channel_AWGN	software/cse/modules/transmit/channel_awgn.h	/^class Channel_AWGN: public Channel_Interface,$/;"	c	namespace:cse_lib
 Channel_AWGN_Parameter	software/cse/modules/transmit/channel_awgn_param.h	/^	Channel_AWGN_Parameter()$/;"	f	class:cse_lib::Channel_AWGN_Parameter
@@ -345,9 +345,10 @@ Channel_Interface	software/cse/modules/transmit/channel_iface.h	/^class Channel_
 Check_All_Identical	software/auswertung/sim_db.py	/^	def Check_All_Identical(self, l):$/;"	m	class:Sim_DB
 Check_Consistency	software/cse/assistance/iter_var_struct.h	/^	void Check_Consistency(std::string var_name, double& start_val, double& incr_val, double& end_val)$/;"	f	class:Iteration_Variable_Structure
 Check_Internal_Dimensions	software/cse/assistance/buffer_dim2.hpp	/^template <class T> void Buffer<T,2>::Check_Internal_Dimensions()$/;"	f	class:Buffer
-Check_Node_Lambda_Min	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^int Decoder_LDPC_Binary_HW_Share::Check_Node_Lambda_Min(Buffer<int>  &in_out_msg,$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
-Check_Node_Min_Sum	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^int Decoder_LDPC_Binary_HW_Share::Check_Node_Min_Sum(Buffer<int> &in_out_msg, float esf_factor)$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
-Check_Node_Split_Row	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^int Decoder_LDPC_Binary_HW_Share::Check_Node_Split_Row(Buffer<int> &in_out_msg, float esf_factor, unsigned int partitions, unsigned int threshold)$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
+Check_Node_Lambda_3Min_3Mag	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^        int Decoder_LDPC_Binary_HW_Share<T>::Check_Node_Lambda_3Min_3Mag(Buffer<T> &in_out_msg,$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
+Check_Node_Lambda_Min	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^        int Decoder_LDPC_Binary_HW_Share<T>::Check_Node_Lambda_Min(Buffer<T>    &in_out_msg,$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
+Check_Node_Min_Sum	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^        int Decoder_LDPC_Binary_HW_Share<T>::Check_Node_Min_Sum(Buffer<T> &in_out_msg, float esf_factor)$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
+Check_Node_Split_Row	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^        int Decoder_LDPC_Binary_HW_Share<T>::Check_Node_Split_Row(Buffer<T> &in_out_msg, float esf_factor, unsigned int partitions, int threshold)$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
 Check_Str_In_Str	software/cse/assistance/helper_functions.h	/^	inline bool Check_Str_In_Str(const std::string &str, const std::string& search)$/;"	f	namespace:hlp_fct::str
 Clear	software/cse/assistance/buffer_dim1.h	/^	void Clear()$/;"	f	class:Buffer
 Clear	software/cse/assistance/buffer_dim2.h	/^	void Clear()$/;"	f	class:Buffer
@@ -404,6 +405,7 @@ DEC_CONV_IFACE_H_	software/ems/channel_codes_conv/dec_conv_iface.h	12;"	d
 DEC_CONV_PARAM_H_	software/ems/channel_codes_conv/dec_conv_param.h	12;"	d
 DEC_LDPC_BIN_HW_IFACE_H_	software/chain/ldpc_dec/dec_ldpc_bin_hw_iface.h	14;"	d
 DEC_LDPC_BIN_HW_SHARE_H_	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.h	14;"	d
+DEC_LDPC_CHECK_NODE_SHARE_H_	software/chain/ldpc_dec/dec_ldpc_check_node_share.h	14;"	d
 DEC_LDPC_IEEE_802_11AD_CODES_HPP_	software/chain/ldpc_dec/dec_ldpc_ieee_802_11ad_codes.hpp	14;"	d
 DEC_LDPC_IEEE_802_11AD_H_	software/chain/ldpc_dec/dec_ldpc_ieee_802_11ad.h	14;"	d
 DEC_LDPC_IEEE_802_11AD_PARAM_H_	software/chain/ldpc_dec/dec_ldpc_ieee_802_11ad_param.h	14;"	d
@@ -459,9 +461,9 @@ Data_Out	software/cse/modules/base/data_io.h	/^	Data_Out() {}$/;"	f	class:cse_li
 Data_Out	software/cse/modules/base/data_io.h	/^template <class T, int dim = 1> class Data_Out : public Data_IO_Abstract$/;"	c	namespace:cse_lib
 Data_Ptr	software/cse/assistance/buffer_dim1.hpp	/^inline T* Buffer<T,1>::Data_Ptr()$/;"	f	class:Buffer
 Data_Ptr	software/cse/assistance/buffer_dim1.hpp	/^inline const T* Buffer<T,1>::Data_Ptr() const$/;"	f	class:Buffer
-Decode_Layered	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^unsigned int Decoder_LDPC_Binary_HW_Share::Decode_Layered(Buffer<int, 2> &app_ram,$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
-Decode_Layered_Superposed	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^unsigned int Decoder_LDPC_Binary_HW_Share::Decode_Layered_Superposed(Buffer<int, 2> &app_ram,$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
-Decode_Two_Phase	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^unsigned int Decoder_LDPC_Binary_HW_Share::Decode_Two_Phase(Buffer<int, 2> &app_ram,$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
+Decode_Layered	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^        unsigned int Decoder_LDPC_Binary_HW_Share<T>::Decode_Layered(Buffer<T, 2> &app_ram,$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
+Decode_Layered_Superposed	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^        unsigned int Decoder_LDPC_Binary_HW_Share<T>::Decode_Layered_Superposed(Buffer<T, 2> &app_ram,$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
+Decode_Two_Phase	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^        unsigned int Decoder_LDPC_Binary_HW_Share<T>::Decode_Two_Phase(Buffer<T, 2> &app_ram,$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
 Decoder_Convolutional	software/ems/channel_codes_conv/dec_conv.h	/^class Decoder_Convolutional: public Decoder_Convolutional_Interface<T> , public Decoder_Convolutional_Parameter, public Convolutional_Share {$/;"	c
 Decoder_Convolutional_Interface	software/ems/channel_codes_conv/dec_conv_iface.h	/^	Decoder_Convolutional_Interface() {$/;"	f	class:Decoder_Convolutional_Interface
 Decoder_Convolutional_Interface	software/ems/channel_codes_conv/dec_conv_iface.h	/^class Decoder_Convolutional_Interface: public Base_Interface {$/;"	c
@@ -470,23 +472,26 @@ Decoder_Convolutional_Parameter	software/ems/channel_codes_conv/dec_conv_param.h
 Decoder_LDPC_Binary_HW_Interface	software/chain/ldpc_dec/dec_ldpc_bin_hw_iface.h	/^	Decoder_LDPC_Binary_HW_Interface()$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Interface
 Decoder_LDPC_Binary_HW_Interface	software/chain/ldpc_dec/dec_ldpc_bin_hw_iface.h	/^class Decoder_LDPC_Binary_HW_Interface: public Base_Interface$/;"	c	namespace:cse_lib
 Decoder_LDPC_Binary_HW_Share	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.h	/^	Decoder_LDPC_Binary_HW_Share() { };$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
-Decoder_LDPC_Binary_HW_Share	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.h	/^class Decoder_LDPC_Binary_HW_Share$/;"	c	namespace:cse_lib
+Decoder_LDPC_Binary_HW_Share	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.h	/^class Decoder_LDPC_Binary_HW_Share : public Decoder_LDPC_Check_Node_Share$/;"	c	namespace:cse_lib
+Decoder_LDPC_Check_Node_Share	software/chain/ldpc_dec/dec_ldpc_check_node_share.h	/^	Decoder_LDPC_Check_Node_Share(){};$/;"	f	class:cse_lib::Decoder_LDPC_Check_Node_Share
+Decoder_LDPC_Check_Node_Share	software/chain/ldpc_dec/dec_ldpc_check_node_share.h	/^class Decoder_LDPC_Check_Node_Share$/;"	c	namespace:cse_lib
 Decoder_LDPC_IEEE_802_11ad	software/chain/ldpc_dec/dec_ldpc_ieee_802_11ad.h	/^	Decoder_LDPC_IEEE_802_11ad() { };$/;"	f	class:cse_lib::Decoder_LDPC_IEEE_802_11ad
-Decoder_LDPC_IEEE_802_11ad	software/chain/ldpc_dec/dec_ldpc_ieee_802_11ad.h	/^class Decoder_LDPC_IEEE_802_11ad : public Decoder_LDPC_Binary_HW_Interface,$/;"	c	namespace:cse_lib
+Decoder_LDPC_IEEE_802_11ad	software/chain/ldpc_dec/dec_ldpc_ieee_802_11ad.h	/^class Decoder_LDPC_IEEE_802_11ad : public Decoder_LDPC_Binary_HW_Interface<T>,$/;"	c	namespace:cse_lib
 Decoder_LDPC_IEEE_802_11ad_Parameter	software/chain/ldpc_dec/dec_ldpc_ieee_802_11ad_param.h	/^	Decoder_LDPC_IEEE_802_11ad_Parameter()$/;"	f	class:cse_lib::Decoder_LDPC_IEEE_802_11ad_Parameter
 Decoder_LDPC_IEEE_802_11ad_Parameter	software/chain/ldpc_dec/dec_ldpc_ieee_802_11ad_param.h	/^class Decoder_LDPC_IEEE_802_11ad_Parameter : public Base_Parameter$/;"	c	namespace:cse_lib
 Delete_All_Modules	software/cse/assistance/manage_dyn_instances.h	/^	void Delete_All_Modules()$/;"	f	class:Manage_Dynamic_Instances
 Delete_Event	software/cse/assistance/buffer_abstract.h	/^	void Delete_Event()$/;"	f	class:Buffer_Abstract
 Delete_Recursive	software/cse/modules/base/status_out_container.h	/^	void Delete_Recursive()$/;"	f	class:cse_lib::Status_Out_Plugin_Container
 Delete_Simulation	software/auswertung/sim_db.py	/^	def Delete_Simulation(self, sim_id):$/;"	m	class:Sim_DB
-Delta	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^inline int Decoder_LDPC_Binary_HW_Share::Delta(int x, unsigned int num_bits_fract)$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
+Delta	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^        inline float Decoder_LDPC_Binary_HW_Share<T>::Delta(float x, unsigned int)$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
+Delta	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^        inline int Decoder_LDPC_Binary_HW_Share<T>::Delta(int x, unsigned int num_bits_fract)$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
 Demapper	software/cse/modules/transmit/demapper.h	/^class Demapper: public Demapper_Interface,$/;"	c	namespace:cse_lib
 Demapper_Interface	software/cse/modules/transmit/demapper_iface.h	/^	Demapper_Interface()$/;"	f	class:cse_lib::Demapper_Interface
 Demapper_Interface	software/cse/modules/transmit/demapper_iface.h	/^class Demapper_Interface: public Base_Interface$/;"	c	namespace:cse_lib
 Demapper_Parameter	software/cse/modules/transmit/demapper_param.h	/^	Demapper_Parameter()$/;"	f	class:cse_lib::Demapper_Parameter
 Demapper_Parameter	software/cse/modules/transmit/demapper_param.h	/^class Demapper_Parameter : public Base_Parameter$/;"	c	namespace:cse_lib
 Destroy_List	software/cse/assistance/hold_module_config.h	/^	void Destroy_List()$/;"	f	class:Hold_Module_Config
-Distribute_Messages_Partitions	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^void Decoder_LDPC_Binary_HW_Share::Distribute_Messages_Partitions(std::vector< std::vector<int> > &parts, Buffer<int> &in_out_msg, unsigned int partitions, unsigned int len)$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
+Distribute_Messages_Partitions	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^        void Decoder_LDPC_Binary_HW_Share<T>::Distribute_Messages_Partitions(std::vector< std::vector<T> > &parts, Buffer<T> &in_out_msg, unsigned int partitions, unsigned int len)$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
 Dump	software/cse/assistance/buffer_dim1.hpp	/^void Buffer<T,1>::Dump(std::string filename, bool append, bool linebreak)$/;"	f	class:Buffer
 Dump	software/cse/assistance/buffer_dim2.hpp	/^template <class T> void Buffer<T,2>::Dump(std::string filename, bool append)$/;"	f	class:Buffer
 Dump_Intermediate_Result	software/cse/modules/source_sink/stat_error_rates_share.h	/^	void Dump_Intermediate_Result(string instance_name,$/;"	f	class:cse_lib::Statistics_Error_Rates_Share
@@ -564,7 +569,7 @@ Get	software/cse/modules/base/data_io.h	/^	Buffer_Abstract* Get()$/;"	f	class:cs
 Get	software/cse/modules/base/data_io.h	/^	Buffer_Abstract* Get()$/;"	f	class:cse_lib::Data_Out
 Get_All	software/auswertung/sim_db.py	/^	def Get_All(self, x, l):$/;"	m	class:Sim_DB
 Get_Chains	software/auswertung/sim_db.py	/^	def Get_Chains(self):$/;"	m	class:Sim_DB
-Get_Check_Node_Input	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^void Decoder_LDPC_Binary_HW_Share::Get_Check_Node_Input(Buffer<int, 2> &app_ram,$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
+Get_Check_Node_Input	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^        void Decoder_LDPC_Binary_HW_Share<T>::Get_Check_Node_Input(Buffer<T, 2> &app_ram,$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
 Get_Current_Config	software/cse/assistance/manage_module_config.h	/^	Parse_Module_Config& Get_Current_Config()$/;"	f	class:Manage_Module_Config
 Get_Current_Module_Config	software/cse/assistance/parse_module_config.h	/^	const Hold_Module_Config& Get_Current_Module_Config()$/;"	f	class:Parse_Module_Config
 Get_Current_Tree	software/cse/assistance/parse_module_config.h	/^	pugi::xml_node Get_Current_Tree()$/;"	f	class:Parse_Module_Config
@@ -582,7 +587,7 @@ Get_Ref	software/cse/assistance/generic_list.h	/^	T& Get_Ref(int i)$/;"	f	class:
 Get_Results	software/auswertung/sim_db.py	/^	def Get_Results(self, chain, result_type, names, values, hi_sel):$/;"	m	class:Sim_DB
 Get_Results_Over_Iterations	software/auswertung/sim_db.py	/^	def Get_Results_Over_Iterations(self, names, values, iter_sel, module, port, resultname, logscale):$/;"	m	class:Sim_DB
 Get_Results_Single	software/auswertung/sim_db.py	/^	def Get_Results_Single(self, names, values, iter_sel, module, port, resultname, logscale):$/;"	m	class:Sim_DB
-Get_Sign	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.h	/^    int Get_Sign(int value) { return value >= 0 ? 1 : -1; }$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
+Get_Sign	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.h	/^    int Get_Sign(const T& value) { return value >= 0 ? 1 : -1; }$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
 Get_Value_Col	software/auswertung/sim_db.py	/^	def Get_Value_Col(self, value):$/;"	m	class:Sim_DB
 Get_Value_Human	software/auswertung/sim_db.py	/^	def Get_Value_Human(self, value_float, value_string):$/;"	m	class:Sim_DB
 Get_Value_List_Col	software/auswertung/sim_db.py	/^	def Get_Value_List_Col(self, value):$/;"	m	class:Sim_DB
@@ -639,10 +644,10 @@ ITER_VAR_LIST_TYPE	software/cse/assistance/manage_module_result.h	/^	typedef Gen
 ITER_VAR_STRUCT_H_	software/cse/assistance/iter_var_struct.h	14;"	d
 ITPP_SUPPORT	software/doc/examples/example_buffer.cpp	12;"	d	file:
 Identity_Matrix	software/cse/assistance/buffer_math.h	/^template<typename T> Buffer<T, 2> Identity_Matrix(unsigned int size)$/;"	f	namespace:buffer_math
-Init	software/chain/ldpc_dec/dec_ldpc_ieee_802_11ad.cpp	/^void Decoder_LDPC_IEEE_802_11ad::Init()$/;"	f	class:cse_lib::Decoder_LDPC_IEEE_802_11ad
+Init	software/chain/ldpc_dec/dec_ldpc_ieee_802_11ad.cpp	/^void Decoder_LDPC_IEEE_802_11ad<T>::Init()$/;"	f	class:cse_lib::Decoder_LDPC_IEEE_802_11ad
 Init	software/chain/ldpc_enc/enc_ldpc_ieee_802_11ad.cpp	/^void Encoder_LDPC_IEEE_802_11ad::Init()$/;"	f	class:cse_lib::Encoder_LDPC_IEEE_802_11ad
 Init	software/cse/modules/base/param.h	/^	void Init(const T& value, const string& name, Param_List& list)$/;"	f	class:cse_lib::Param
-Init_APP_RAM	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^void Decoder_LDPC_Binary_HW_Share::Init_APP_RAM(bool            parity_reordering,$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
+Init_APP_RAM	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^        void Decoder_LDPC_Binary_HW_Share<T>::Init_APP_RAM(bool          parity_reordering,$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
 Insert	software/cse/assistance/generic_list.h	/^	void Insert(const T &Obj, unsigned int index)$/;"	f	class:Generic_List
 Insert	software/cse/assistance/generic_pointer_list.h	/^	void Insert(const T &Obj, unsigned int index)$/;"	f	class:Generic_Pointer_List
 Insert_Result	software/auswertung/sim_db.py	/^	def Insert_Result(self, yfetch, config):$/;"	m	class:Sim_DB
@@ -663,7 +668,8 @@ Iteration_Variable_Structure	software/cse/assistance/iter_var_struct.h	/^class I
 KEEP	software/cse/modules/base/cse_namespace.h	/^	enum INTERNAL_STATE_RUN_ENUM {RESET = 0, KEEP = 1};$/;"	e	enum:cse_lib::INTERNAL_STATE_RUN_ENUM
 Keep_Previous_State	software/cse/modules/base/base_iface.h	/^	virtual void Keep_Previous_State(){}$/;"	f	class:cse_lib::Base_Interface
 L	software/cse/modules/transmit/mapper_share.h	/^	int k, M, L;$/;"	m	class:cse_lib::Mapper_Share
-LAMBDA_MIN	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.h	/^		LAMBDA_MIN, \/*!< Lambda-Min, where lambda is given by num_lambda_min *\/$/;"	e	enum:cse_lib::Decoder_LDPC_Binary_HW_Share::CHECK_NODE_ENUM
+LAMBDA_3MIN_3MAG	software/chain/ldpc_dec/dec_ldpc_check_node_share.h	/^		LAMBDA_3MIN_3MAG, \/*!< Lambda-Min, searching three minima, output three different magnitudes *\/$/;"	e	enum:cse_lib::Decoder_LDPC_Check_Node_Share::CHECK_NODE_ENUM
+LAMBDA_MIN	software/chain/ldpc_dec/dec_ldpc_check_node_share.h	/^		LAMBDA_MIN,      \/*!< Lambda-Min, where lambda is given by num_lambda_min *\/$/;"	e	enum:cse_lib::Decoder_LDPC_Check_Node_Share::CHECK_NODE_ENUM
 LAYERED	software/chain/ldpc_dec/dec_ldpc_ieee_802_11ad_param.h	/^		LAYERED            \/*!< Layered scheduling (aka Turbo Decoding Message Passing) *\/$/;"	e	enum:cse_lib::Decoder_LDPC_IEEE_802_11ad_Parameter::DEC_SCHEDULING_ENUM
 LDPC_CODE	software/chain/ldpc_dec/dec_ldpc_ieee_802_11ad_param.h	/^	enum LDPC_CODE {$/;"	g	class:cse_lib::Decoder_LDPC_IEEE_802_11ad_Parameter
 LDPC_CODE	software/chain/ldpc_enc/enc_ldpc_ieee_802_11ad_param.h	/^	enum LDPC_CODE {$/;"	g	class:cse_lib::Encoder_LDPC_IEEE_802_11ad_Parameter
@@ -704,7 +710,7 @@ LM_STR_COND	software/cse/assistance/debug_macros.h	86;"	d
 LM_STR_LEVEL	software/cse/assistance/debug_macros.h	82;"	d
 LM_STR_VAR	software/cse/assistance/debug_macros.h	90;"	d
 LM_STR_WHERE	software/cse/assistance/debug_macros.h	80;"	d
-LOG_LEVEL_LDPC	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	23;"	d	file:
+LOG_LEVEL_LDPC	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	21;"	d	file:
 LTE_2304	software/ems/interleaving/interleaving_table_based_param.h	/^		LTE_2304,\/\/\/LTE compliant interleaver of length 2304$/;"	e	enum:Interleaving_Table_Based_Parameter::INTERLEAVER_TABLE
 Link_Value_String	software/cse/modules/base/param.h	/^	void Link_Value_String(DS_Enum_String<T> data_struct)$/;"	f	class:cse_lib::Param_Out
 Link_Value_String	software/cse/modules/base/param.h	/^	void Link_Value_String(T value, string str)$/;"	f	class:cse_lib::Param
@@ -742,8 +748,8 @@ MIMO_CHANNEL_RAYLEIGH_PARAM_H_	software/ems/channels/mimo_channel_rayleigh_param
 MIMO_DETECTION_IFACE_H_	software/ems/mimo_detection/mimo_detection_iface.h	12;"	d
 MIMO_DETECTION_SPHERE_H_	software/ems/mimo_detection/mimo_detection_sphere.h	12;"	d
 MIMO_DETECTION_SPHERE_PARAM_H_	software/ems/mimo_detection/mimo_detection_sphere_param.h	12;"	d
-MIN_SUM	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.h	/^		MIN_SUM,     \/*!< Min-Sum decoding, with extrinsic scaling factor esf_factor *\/$/;"	e	enum:cse_lib::Decoder_LDPC_Binary_HW_Share::CHECK_NODE_ENUM
-MIN_SUM_SELF_CORRECTING	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.h	/^        MIN_SUM_SELF_CORRECTING,$/;"	e	enum:cse_lib::Decoder_LDPC_Binary_HW_Share::CHECK_NODE_ENUM
+MIN_SUM	software/chain/ldpc_dec/dec_ldpc_check_node_share.h	/^		MIN_SUM,         \/*!< Min-Sum decoding, with extrinsic scaling factor esf_factor *\/$/;"	e	enum:cse_lib::Decoder_LDPC_Check_Node_Share::CHECK_NODE_ENUM
+MIN_SUM_SELF_CORRECTING	software/chain/ldpc_dec/dec_ldpc_check_node_share.h	/^        MIN_SUM_SELF_CORRECTING,$/;"	e	enum:cse_lib::Decoder_LDPC_Check_Node_Share::CHECK_NODE_ENUM
 MMSE	software/ems/mimo_detection/mimo_detection_sphere_param.h	/^		ZERO_FORCING = 0, MMSE$/;"	e	enum:Mimo_Detection_Sphere_Parameter::PREPROCESSING
 MODE_ENUM	software/cse/modules/source_sink/source_bits_param.h	/^	enum MODE_ENUM {RANDOM, ALL_ZERO, ALL_ONE};$/;"	g	class:cse_lib::Source_Bits_Parameter
 MSG_TYPE_ENUM	software/cse/assistance/helper_functions.h	/^		enum MSG_TYPE_ENUM {INFO, WARNING, ERROR};$/;"	g	namespace:hlp_fct::logging
@@ -771,22 +777,22 @@ Mimo_Detection_Sphere	software/ems/mimo_detection/mimo_detection_sphere.h	/^clas
 Mimo_Detection_Sphere_Parameter	software/ems/mimo_detection/mimo_detection_sphere_param.h	/^	Mimo_Detection_Sphere_Parameter() {$/;"	f	class:Mimo_Detection_Sphere_Parameter
 Mimo_Detection_Sphere_Parameter	software/ems/mimo_detection/mimo_detection_sphere_param.h	/^class Mimo_Detection_Sphere_Parameter: public Base_Parameter {$/;"	c
 Min_Index	software/cse/assistance/buffer_math.h	/^template<typename T> unsigned int Min_Index(Buffer<T,1>& buffer)$/;"	f	namespace:buffer_math
-Minimum_Fixp	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^unsigned int Decoder_LDPC_Binary_HW_Share::Minimum_Fixp(Buffer<unsigned int> &message, unsigned int &idx)$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
-Minimum_Fixp_Split_Row	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^unsigned int Decoder_LDPC_Binary_HW_Share::Minimum_Fixp_Split_Row(Buffer<unsigned int> &message, unsigned int& idx, unsigned int part_num, unsigned int check_node_degree)$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
-Minstar_Fixp	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^inline int Decoder_LDPC_Binary_HW_Share::Minstar_Fixp(int a, int b, unsigned int num_bits_fract)$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
+Minimum_Fixp	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^        T Decoder_LDPC_Binary_HW_Share<T>::Minimum_Fixp(Buffer<T>    &message,$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
+Minimum_Fixp_Split_Row	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^        unsigned int Decoder_LDPC_Binary_HW_Share<T>::Minimum_Fixp_Split_Row(Buffer<T> &message, unsigned int& idx, unsigned int part_num, unsigned int check_node_degree)$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
+Minstar_Fixp	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^        inline int Decoder_LDPC_Binary_HW_Share<T>::Minstar_Fixp(T a, T b, unsigned int num_bits_fract)$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
 Modify_Event	software/cse/assistance/buffer_abstract.h	/^	void Modify_Event()$/;"	f	class:Buffer_Abstract
 Msg	software/cse/assistance/helper_functions.h	/^		inline void Msg(MSG_TYPE_ENUM msg_type, std::string class_name, std::string message, bool print_meta=true)$/;"	f	namespace:hlp_fct::logging
 Msg	software/cse/assistance/helper_functions.h	/^		inline void Msg(MSG_TYPE_ENUM msg_type, std::string class_name, std::stringstream& message, bool print_meta=true)$/;"	f	namespace:hlp_fct::logging
 Mult_Bin	software/cse/assistance/buffer_math.h	/^template<typename T> Buffer<T, 2> Mult_Bin(Buffer<T,2>& a, Buffer<T,2>& b)$/;"	f	namespace:buffer_math::bin
 Mult_Bin	software/cse/assistance/buffer_math.h	/^template<typename T> T Mult_Bin(Buffer<T,1>& a, Buffer<T,1>& b)$/;"	f	namespace:buffer_math::bin
-Multiply_Sign_Esf	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^void Decoder_LDPC_Binary_HW_Share::Multiply_Sign_Esf(std::vector<int>& part, std::vector<unsigned int>& temp_part, int local_pchk_sign, float esf_factor, unsigned int part_num)$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
-Multiply_Split_Sign_Signal	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^void Decoder_LDPC_Binary_HW_Share::Multiply_Split_Sign_Signal(std::vector<int>& part, int split_sign)$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
-NLOGGING	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	24;"	d	file:
+Multiply_Sign_Esf	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^        void Decoder_LDPC_Binary_HW_Share<T>::Multiply_Sign_Esf(std::vector<T>& part, std::vector<T>& temp_part, int local_pchk_sign, float esf_factor, unsigned int part_num)$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
+Multiply_Split_Sign_Signal	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^        void Decoder_LDPC_Binary_HW_Share<T>::Multiply_Split_Sign_Signal(std::vector<T>& part, int split_sign)$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
+NLOGGING	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	22;"	d	file:
 NONE	software/ems/mimo_detection/mimo_detection_sphere_param.h	/^		NONE = 0, FULL_SORTING, CHANNEL_BASED, APRIORI_BASED, HYBRID$/;"	e	enum:Mimo_Detection_Sphere_Parameter::ENUMERATION_TECHNIQUE
 NORMAL	software/ems/mimo_detection/mimo_detection_sphere_param.h	/^		NORMAL = 0,$/;"	e	enum:Mimo_Detection_Sphere_Parameter::APRIORI_FEED_IN
 NO_STOPPING_EVENT	software/cse/modules/base/cse_namespace.h	/^	enum RETURN_VALUE_RUN_ENUM {NO_STOPPING_EVENT = 0, STOP_CURRENT_SIMULATION_POINT = -1,$/;"	e	enum:cse_lib::RETURN_VALUE_RUN_ENUM
 NO_TABLE	software/ems/interleaving/interleaving_table_based_param.h	/^		NO_TABLE,\/\/\/no given table, use given file_name$/;"	e	enum:Interleaving_Table_Based_Parameter::INTERLEAVER_TABLE
-Neighbors_Threshold_Enable	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^bool Decoder_LDPC_Binary_HW_Share::Neighbors_Threshold_Enable(unsigned int part_num, unsigned int partitions, std::vector<unsigned int>& threshold_en)$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
+Neighbors_Threshold_Enable	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^        bool Decoder_LDPC_Binary_HW_Share<T>::Neighbors_Threshold_Enable(unsigned int part_num, unsigned int partitions, std::vector<unsigned int>& threshold_en)$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
 Not	software/auswertung/sim_db.py	/^	def Not(self, val):$/;"	m	class:Sim_DB
 NrTransmissions	software/ems/mimo_detection/mimo_detection_sphere.h	/^	int NrTransmissions;$/;"	m	class:Mimo_Detection_Sphere
 ONLY_ONES	software/ems/mimo_detection/mimo_detection_sphere_param.h	/^		ONLY_ONES,$/;"	e	enum:Mimo_Detection_Sphere_Parameter::APRIORI_FEED_IN
@@ -958,7 +964,7 @@ Read	software/cse/assistance/buffer_dim2.hpp	/^template <class T> void Buffer<T,
 Read	software/cse/modules/base/status_out_plugin_hist.h	/^	OUTPUT_TYPE Read(int index)$/;"	f	class:cse_lib::Status_Out_Plugin_Histogram
 Read	software/cse/modules/base/status_out_plugin_mean.h	/^	OUTPUT_TYPE Read()$/;"	f	class:cse_lib::Status_Out_Plugin_Mean
 Read	software/cse/modules/base/status_out_plugins.h	/^	T Read()$/;"	f	class:cse_lib::Status_Out_Plugin_Default
-Read_APP_RAM	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^void Decoder_LDPC_Binary_HW_Share::Read_APP_RAM(Buffer<int, 2>          &app_ram,$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
+Read_APP_RAM	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^        void Decoder_LDPC_Binary_HW_Share<T>::Read_APP_RAM(Buffer<T, 2>            &app_ram,$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
 Read_Convert	software/cse/assistance/buffer_dim1.hpp	/^template<typename T_IT> void Buffer<T,1>::Read_Convert(itpp::Vec<T_IT>& destination)$/;"	f	class:Buffer
 Read_Save_Port_Data	software/auswertung/sim_db.py	/^	def Read_Save_Port_Data(self,  xml, filename):$/;"	m	class:Sim_DB
 Read_Sub_Vector	software/cse/assistance/buffer_dim1.hpp	/^inline itpp::Vec<T> Buffer<T,1>::Read_Sub_Vector(int start, int end)$/;"	f	class:Buffer
@@ -974,7 +980,7 @@ Register_As_View	software/cse/assistance/buffer_abstract.h	/^	void Register_As_V
 Register_Flag	software/cse/assistance/buffer_abstract.h	/^	bool& Register_Flag(bool& modify_flag, bool& valid_flag)$/;"	f	class:Buffer_Abstract
 Register_Module	software/cse/assistance/manage_dyn_instances.h	/^	template<class T> static void Register_Module()$/;"	f	class:Manage_Dynamic_Instances
 Register_Module	software/cse/assistance/manage_module_config.h	/^	template<class T> static void Register_Module()$/;"	f	class:Manage_Module_Config
-Regroup_Messages_Partitions	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^void Decoder_LDPC_Binary_HW_Share::Regroup_Messages_Partitions(std::vector< std::vector<int> > &parts, Buffer<int> &in_out_msg, unsigned int len)$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
+Regroup_Messages_Partitions	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^        void Decoder_LDPC_Binary_HW_Share<T>::Regroup_Messages_Partitions(std::vector< std::vector<T> > &parts, Buffer<T> &in_out_msg, unsigned int len)$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
 Replace	software/auswertung/sim_db.py	/^	def Replace(self, val, repl):$/;"	m	class:Sim_DB
 Reset	software/cse/modules/base/status_out.h	/^	void Reset()$/;"	f	class:cse_lib::Status_Out
 Reset	software/cse/modules/base/status_out_plugin_hist.h	/^	void Reset()$/;"	f	class:cse_lib::Status_Out_Plugin_Histogram
@@ -993,7 +999,7 @@ Result	software/cse/assistance/helper_functions.h	/^			typedef TrueType Result;$
 Result_Data_Struct	software/cse/assistance/result_data_struct.h	/^	Result_Data_Struct() {}$/;"	f	class:Result_Data_Struct
 Result_Data_Struct	software/cse/assistance/result_data_struct.h	/^class Result_Data_Struct$/;"	c
 Result_Data_Struct_Pugixml	software/cse/assistance/result_data_struct_pugixml.h	/^class Result_Data_Struct_Pugixml : public Result_Data_Struct$/;"	c
-Run	software/chain/ldpc_dec/dec_ldpc_ieee_802_11ad.cpp	/^int Decoder_LDPC_IEEE_802_11ad::Run()$/;"	f	class:cse_lib::Decoder_LDPC_IEEE_802_11ad
+Run	software/chain/ldpc_dec/dec_ldpc_ieee_802_11ad.cpp	/^int Decoder_LDPC_IEEE_802_11ad<T>::Run()$/;"	f	class:cse_lib::Decoder_LDPC_IEEE_802_11ad
 Run	software/chain/ldpc_enc/enc_ldpc_ieee_802_11ad.cpp	/^int Encoder_LDPC_IEEE_802_11ad::Run()$/;"	f	class:cse_lib::Encoder_LDPC_IEEE_802_11ad
 S0	software/cse/modules/transmit/mapper_share.h	/^	imat S0;$/;"	m	class:cse_lib::Mapper_Share
 S0_	software/cse/modules/transmit/demapper.h	/^	Buffer<int,2> S0_;$/;"	m	class:cse_lib::Demapper
@@ -1011,9 +1017,9 @@ SOURCE_BITS_INTERFACE_H_	software/cse/modules/source_sink/source_bits_iface.h	13
 SOURCE_BITS_PARAM_H_	software/cse/modules/source_sink/source_bits_param.h	14;"	d
 SPHERE_CONSTRAINT	software/ems/mimo_detection/mimo_detection_sphere_param.h	/^	enum SPHERE_CONSTRAINT {$/;"	g	class:Mimo_Detection_Sphere_Parameter
 SPHERE_SHRINKING	software/ems/mimo_detection/mimo_detection_sphere_param.h	/^		SPHERE_SHRINKING,$/;"	e	enum:Mimo_Detection_Sphere_Parameter::SPHERE_CONSTRAINT
-SPLIT_ROW	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.h	/^        SPLIT_ROW,$/;"	e	enum:cse_lib::Decoder_LDPC_Binary_HW_Share::CHECK_NODE_ENUM
-SPLIT_ROW_IMPROVED	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.h	/^        SPLIT_ROW_IMPROVED,$/;"	e	enum:cse_lib::Decoder_LDPC_Binary_HW_Share::CHECK_NODE_ENUM
-SPLIT_ROW_SELF_CORRECTING	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.h	/^        SPLIT_ROW_SELF_CORRECTING$/;"	e	enum:cse_lib::Decoder_LDPC_Binary_HW_Share::CHECK_NODE_ENUM
+SPLIT_ROW	software/chain/ldpc_dec/dec_ldpc_check_node_share.h	/^        SPLIT_ROW,$/;"	e	enum:cse_lib::Decoder_LDPC_Check_Node_Share::CHECK_NODE_ENUM
+SPLIT_ROW_IMPROVED	software/chain/ldpc_dec/dec_ldpc_check_node_share.h	/^        SPLIT_ROW_IMPROVED,$/;"	e	enum:cse_lib::Decoder_LDPC_Check_Node_Share::CHECK_NODE_ENUM
+SPLIT_ROW_SELF_CORRECTING	software/chain/ldpc_dec/dec_ldpc_check_node_share.h	/^        SPLIT_ROW_SELF_CORRECTING$/;"	e	enum:cse_lib::Decoder_LDPC_Check_Node_Share::CHECK_NODE_ENUM
 STATIC_ASSERT	software/cse/third_party/pugixml/pugixml.cpp	84;"	d	file:
 STATUS_OUT_ABSTRACT_H_	software/cse/modules/base/status_out_abstract.h	14;"	d
 STATUS_OUT_CONTAINER_H_	software/cse/modules/base/status_out_container.h	14;"	d
@@ -1032,11 +1038,17 @@ STOP_CURRENT_BLOCK	software/cse/modules/base/cse_namespace.h	/^	                
 STOP_CURRENT_SIMULATION_POINT	software/cse/modules/base/cse_namespace.h	/^	enum RETURN_VALUE_RUN_ENUM {NO_STOPPING_EVENT = 0, STOP_CURRENT_SIMULATION_POINT = -1,$/;"	e	enum:cse_lib::RETURN_VALUE_RUN_ENUM
 STRING_LIST_TYPE	software/cse/assistance/manage_module_config.h	/^	typedef Generic_List<std::string, std::vector> STRING_LIST_TYPE;$/;"	t	class:Manage_Module_Config
 SUFFIXES	software/chain/CMake/Makefile	/^SUFFIXES =$/;"	m
+Saturate	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^        inline void Decoder_LDPC_Binary_HW_Share<T>::Saturate(float&, float)$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
+Saturate	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^        inline void Decoder_LDPC_Binary_HW_Share<T>::Saturate(float&, float, float)$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
+Saturate	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^        inline void Decoder_LDPC_Binary_HW_Share<T>::Saturate(int &input, int min_msg, int max_msg)$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
+Saturate	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^        inline void Decoder_LDPC_Binary_HW_Share<T>::Saturate(int& input, int max_msg)$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
 Saturate_Value	software/cse/assistance/helper_functions.h	/^		inline void Saturate_Value(int &input, int max_value, int min_value)$/;"	f	namespace:hlp_fct::math
 Saturate_Value	software/cse/assistance/helper_functions.h	/^		inline void Saturate_Value(int &input, unsigned int max_magnitude)$/;"	f	namespace:hlp_fct::math
 Saturate_Value	software/cse/assistance/helper_functions.h	/^		inline void Saturate_Value(unsigned int &input, unsigned int max_magnitude)$/;"	f	namespace:hlp_fct::math
 Save_And_Close	software/auswertung/sim_db.py	/^	def Save_And_Close(self):$/;"	m	class:Sim_DB
 Save_Tree_Position	software/cse/assistance/result_data_struct_pugixml.h	/^	void Save_Tree_Position()$/;"	f	class:Result_Data_Struct_Pugixml
+Scale_ESF	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^        inline void Decoder_LDPC_Binary_HW_Share<T>::Scale_ESF(float &msg, float esf_factor)$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
+Scale_ESF	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^        inline void Decoder_LDPC_Binary_HW_Share<T>::Scale_ESF(int &msg, float esf_factor)$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
 Search	software/cse/assistance/generic_list.h	/^	int Search(const T& value)$/;"	f	class:Generic_List
 Search	software/cse/modules/base/param_list.h	/^	Param_Abstract* Search(const string& name)$/;"	f	class:cse_lib::Param_List
 SearchBox	software/doc/html/search/search.js	/^function SearchBox(name, resultsPath, inFrame, label)$/;"	c
@@ -1093,7 +1105,7 @@ Set_Default_Values	software/ems/mimo_detection/mimo_detection_sphere_param.h	/^	
 Set_From_String	software/cse/assistance/buffer_dim1.hpp	/^void Buffer<T,1>::Set_From_String(const std::string& input)$/;"	f	class:Buffer
 Set_From_String	software/cse/assistance/iter_var_struct.h	/^	void Set_From_String(std::string iter_str, std::string var_name)$/;"	f	class:Iteration_Variable_Structure
 Set_LDPC_Code_Parameters	software/chain/ldpc_enc/enc_ldpc_ieee_802_11ad.cpp	/^void Encoder_LDPC_IEEE_802_11ad::Set_LDPC_Code_Parameters()$/;"	f	class:cse_lib::Encoder_LDPC_IEEE_802_11ad
-Set_LDPC_Parameters	software/chain/ldpc_dec/dec_ldpc_ieee_802_11ad.cpp	/^void Decoder_LDPC_IEEE_802_11ad::Set_LDPC_Parameters()$/;"	f	class:cse_lib::Decoder_LDPC_IEEE_802_11ad
+Set_LDPC_Parameters	software/chain/ldpc_dec/dec_ldpc_ieee_802_11ad.cpp	/^void Decoder_LDPC_IEEE_802_11ad<T>::Set_LDPC_Parameters()$/;"	f	class:cse_lib::Decoder_LDPC_IEEE_802_11ad
 Set_Link_Value	software/cse/modules/base/param.h	/^	int Set_Link_Value(string input)$/;"	f	class:cse_lib::Param
 Set_Link_Value	software/cse/modules/base/param.h	/^	int Set_Link_Value(string input)$/;"	f	class:cse_lib::Param_Out
 Show_DB	software/auswertung/sim_db.py	/^	def Show_DB(self, row_index = -1):$/;"	m	class:Sim_DB
@@ -1110,7 +1122,7 @@ Source_Bits_Interface	software/cse/modules/source_sink/source_bits_iface.h	/^	So
 Source_Bits_Interface	software/cse/modules/source_sink/source_bits_iface.h	/^class Source_Bits_Interface : public Base_Interface$/;"	c	namespace:cse_lib
 Source_Bits_Parameter	software/cse/modules/source_sink/source_bits_param.h	/^	Source_Bits_Parameter()$/;"	f	class:cse_lib::Source_Bits_Parameter
 Source_Bits_Parameter	software/cse/modules/source_sink/source_bits_param.h	/^class Source_Bits_Parameter : public Base_Parameter$/;"	c	namespace:cse_lib
-Split_Row_Local_Minimum_Sign	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^int Decoder_LDPC_Binary_HW_Share::Split_Row_Local_Minimum_Sign(std::vector<int>& part, unsigned int& minimum1, unsigned int& min1_idx, unsigned int& minimum2, unsigned int& threshold_en, unsigned int threshold, unsigned int part_num)$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
+Split_Row_Local_Minimum_Sign	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^        int Decoder_LDPC_Binary_HW_Share<T>::Split_Row_Local_Minimum_Sign(std::vector<T>& part, T& minimum1, unsigned int& min1_idx, T& minimum2, unsigned int& threshold_en, int threshold, unsigned int part_num)$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
 Statistics_Error_Rates	software/cse/modules/source_sink/stat_error_rates.h	/^	Statistics_Error_Rates() {};$/;"	f	class:cse_lib::Statistics_Error_Rates
 Statistics_Error_Rates	software/cse/modules/source_sink/stat_error_rates.h	/^class Statistics_Error_Rates : public Statistics_Error_Rates_Interface<DIM>,$/;"	c	namespace:cse_lib
 Statistics_Error_Rates	software/cse/modules/source_sink/stat_error_rates.h	/^class Statistics_Error_Rates<1> : public Statistics_Error_Rates_Parameter,$/;"	c	namespace:cse_lib
@@ -1178,7 +1190,7 @@ Unregister_All_Create_Modules	software/cse/assistance/manage_dyn_instances.h	/^	
 Unregister_As_View	software/cse/assistance/buffer_abstract.h	/^	void Unregister_As_View(Buffer_Abstract* const view)$/;"	f	class:Buffer_Abstract
 Unregister_Flag	software/cse/assistance/buffer_abstract.h	/^	void Unregister_Flag(bool& flag)$/;"	f	class:Buffer_Abstract
 Unsigned_2_Gray	software/cse/assistance/helper_functions.h	/^		inline unsigned int Unsigned_2_Gray(unsigned int unsigned_value)$/;"	f	namespace:hlp_fct::bit_operations
-Update_Minimum	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^void Decoder_LDPC_Binary_HW_Share::Update_Minimum(std::vector<unsigned int>& temp_part, unsigned int min1_idx, unsigned int min1, unsigned int min2, unsigned int len)$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
+Update_Minimum	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^        void Decoder_LDPC_Binary_HW_Share<T>::Update_Minimum(std::vector<T>& temp_part, unsigned int min1_idx, T min1, T min2, unsigned int len)$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
 Update_To_Next_Value	software/cse/assistance/iter_var_struct.h	/^	int Update_To_Next_Value()$/;"	f	class:Iteration_Variable_Structure
 VIEW_ON_BUFFER	software/cse/assistance/buffer_abstract.h	/^	enum BUFFER_TYPE_ENUM {COPY_BUFFER, VIEW_ON_BUFFER};$/;"	e	enum:Buffer_Abstract::BUFFER_TYPE_ENUM
 Val_Array	software/auswertung/sim_db.py	/^	def Val_Array(self, val):$/;"	m	class:Sim_DB
@@ -1195,7 +1207,7 @@ Write	software/cse/assistance/buffer_dim2.hpp	/^template <class T> void Buffer<T
 Write	software/cse/modules/base/status_out_plugin_hist.h	/^	void Write(T value)$/;"	f	class:cse_lib::Status_Out_Plugin_Histogram
 Write	software/cse/modules/base/status_out_plugin_mean.h	/^	void Write(T value)$/;"	f	class:cse_lib::Status_Out_Plugin_Mean
 Write	software/cse/modules/base/status_out_plugins.h	/^	void Write(T value)$/;"	f	class:cse_lib::Status_Out_Plugin_Default
-Write_Check_Node_Output	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^void Decoder_LDPC_Binary_HW_Share::Write_Check_Node_Output(Buffer<int, 2> &app_ram,$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
+Write_Check_Node_Output	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^        void Decoder_LDPC_Binary_HW_Share<T>::Write_Check_Node_Output(Buffer<T, 2> &app_ram,$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
 Write_Config_Entry	software/auswertung/sim_db.py	/^	def Write_Config_Entry(self,  configuration_number, module, name, value, auto_param_blacklist):$/;"	m	class:Sim_DB
 Write_Convert	software/cse/assistance/buffer_dim1.hpp	/^template<typename T_IT> void Buffer<T,1>::Write_Convert(const itpp::Vec<T_IT>& source)$/;"	f	class:Buffer
 Write_Legend_Title	software/auswertung/sim_db.py	/^	def Write_Legend_Title(self, resultname, logscale):$/;"	m	class:Sim_DB
@@ -1690,7 +1702,7 @@ any	software/cse/third_party/pugixml/pugixml.cpp	/^		static value_type any(value
 any	software/cse/third_party/pugixml/pugixml.cpp	/^		static value_type any(value_type result, uint32_t ch)$/;"	f	struct:__anon13::utf8_writer
 app	software/auswertung/gui.py	/^app = QtGui.QApplication(sys.argv) $/;"	v
 app_parity_check	software/chain/ldpc_dec/dec_ldpc_ieee_802_11ad_param.h	/^	Param<bool> app_parity_check;$/;"	m	class:cse_lib::Decoder_LDPC_IEEE_802_11ad_Parameter
-app_ram_	software/chain/ldpc_dec/dec_ldpc_ieee_802_11ad.h	/^	Buffer<int, 2> app_ram_;  \/\/\/< APP RAM of LDPC decoder$/;"	m	class:cse_lib::Decoder_LDPC_IEEE_802_11ad
+app_ram_	software/chain/ldpc_dec/dec_ldpc_ieee_802_11ad.h	/^	Buffer<T, 2> app_ram_;  \/\/\/< APP RAM of LDPC decoder$/;"	m	class:cse_lib::Decoder_LDPC_IEEE_802_11ad
 append	software/cse/third_party/pugixml/pugixml.cpp	/^		void append(const xpath_node* begin, const xpath_node* end, xpath_allocator* alloc)$/;"	f	class:__anon20::xpath_node_set_raw
 append	software/cse/third_party/pugixml/pugixml.cpp	/^		void append(const xpath_string& o, xpath_allocator* alloc)$/;"	f	class:__anon18::xpath_string
 append_attribute	software/cse/third_party/pugixml/pugixml.cpp	/^	xml_attribute xml_node::append_attribute(const char_t* name)$/;"	f	class:pugi::xml_node
@@ -1849,7 +1861,7 @@ child_value	software/cse/third_party/pugixml/pugixml.cpp	/^	const char_t* xml_no
 children	software/cse/modules/base/status_out_container.h	/^	Status_Out_Plugin_Container<P, DIM-1>* children()$/;"	f	class:cse_lib::Status_Out_Plugin_Container
 children_	software/cse/modules/base/status_out_container.h	/^	Status_Out_Plugin_Container<P, DIM-1>* children_;$/;"	m	class:cse_lib::Status_Out_Plugin_Container
 closeEvent	software/auswertung/gui.py	/^	def closeEvent(self, event):$/;"	m	class:Gui
-cn_msg_abs_	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.h	/^	Buffer<unsigned int> cn_msg_abs_;$/;"	m	class:cse_lib::Decoder_LDPC_Binary_HW_Share
+cn_msg_abs_	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.h	/^	Buffer<T>   cn_msg_abs_;$/;"	m	class:cse_lib::Decoder_LDPC_Binary_HW_Share
 cn_msg_sign_	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.h	/^	Buffer<int> cn_msg_sign_;$/;"	m	class:cse_lib::Decoder_LDPC_Binary_HW_Share
 coded_bit_length_	software/ems/channel_codes_conv/dec_conv.h	/^	unsigned int coded_bit_length_;$/;"	m	class:Decoder_Convolutional
 compare_eq	software/cse/third_party/pugixml/pugixml.cpp	/^		template <class Comp> static bool compare_eq(xpath_ast_node* lhs, xpath_ast_node* rhs, const xpath_context& c, const xpath_stack& stack, const Comp& comp)$/;"	f	class:__anon21::xpath_ast_node	file:
@@ -1895,6 +1907,7 @@ create	software/cse/third_party/pugixml/pugixml.cpp	/^	void xml_document::create
 cse_lib	software/chain/ldpc_dec/dec_ldpc_bin_hw_iface.h	/^namespace cse_lib {$/;"	n
 cse_lib	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^namespace cse_lib {$/;"	n	file:
 cse_lib	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.h	/^namespace cse_lib {$/;"	n
+cse_lib	software/chain/ldpc_dec/dec_ldpc_check_node_share.h	/^namespace cse_lib {$/;"	n
 cse_lib	software/chain/ldpc_dec/dec_ldpc_ieee_802_11ad.cpp	/^namespace cse_lib {$/;"	n	file:
 cse_lib	software/chain/ldpc_dec/dec_ldpc_ieee_802_11ad.h	/^namespace cse_lib {$/;"	n
 cse_lib	software/chain/ldpc_dec/dec_ldpc_ieee_802_11ad_codes.hpp	/^namespace cse_lib {$/;"	n
@@ -1987,7 +2000,7 @@ deallocate_page	software/cse/third_party/pugixml/pugixml.cpp	/^		static void dea
 deallocate_string	software/cse/third_party/pugixml/pugixml.cpp	/^		void deallocate_string(char_t* string)$/;"	f	struct:__anon7::xml_allocator
 deallocation_function	software/cse/third_party/pugixml/pugixml.hpp	/^    typedef void (*deallocation_function)(void* ptr);$/;"	t	namespace:pugi
 dec_algo	software/ems/channel_codes_conv/dec_conv_param.h	/^	Param<DECODING_ALGORITHM> dec_algo;$/;"	m	class:Decoder_Convolutional_Parameter
-dec_algorithm	software/chain/ldpc_dec/dec_ldpc_ieee_802_11ad_param.h	/^	Param<Decoder_LDPC_Binary_HW_Share::CHECK_NODE_ENUM> dec_algorithm;$/;"	m	class:cse_lib::Decoder_LDPC_IEEE_802_11ad_Parameter
+dec_algorithm	software/chain/ldpc_dec/dec_ldpc_ieee_802_11ad_param.h	/^	Param<Decoder_LDPC_Check_Node_Share::CHECK_NODE_ENUM> dec_algorithm;$/;"	m	class:cse_lib::Decoder_LDPC_IEEE_802_11ad_Parameter
 decode_utf16_block	software/cse/third_party/pugixml/pugixml.cpp	/^		static inline typename Traits::value_type decode_utf16_block(const uint16_t* data, size_t size, typename Traits::value_type result)$/;"	f	struct:__anon13::utf_decoder
 decode_utf32_block	software/cse/third_party/pugixml/pugixml.cpp	/^		static inline typename Traits::value_type decode_utf32_block(const uint32_t* data, size_t size, typename Traits::value_type result)$/;"	f	struct:__anon13::utf_decoder
 decode_utf8_block	software/cse/third_party/pugixml/pugixml.cpp	/^		static inline typename Traits::value_type decode_utf8_block(const uint8_t* data, size_t size, typename Traits::value_type result)$/;"	f	struct:__anon13::utf_decoder
@@ -2288,16 +2301,14 @@ input	software/cse/modules/interleaving/interleaving_iface.h	/^	Data_In<T> input
 input	software/ems/assistance/constant_factor_iface.h	/^	Data_In<T> input;$/;"	m	class:Constant_Factor_Interface
 input_	software/cse/modules/base/data_io.h	/^	Buffer<T, DIM>* input_;$/;"	m	class:cse_lib::Data_In
 input_R_matrices	software/ems/mimo_detection/mimo_detection_iface.h	/^	Data_In<complex<T> , 2> input_R_matrices;$/;"	m	class:Mimo_Detection_Interface
-input_app	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^ofstream input_app;$/;"	v
 input_bits	software/chain/ldpc_enc/enc_iface.h	/^	Data_In<unsigned int> input_bits;$/;"	m	class:cse_lib::Encoder_Interface
 input_bits	software/cse/modules/encoder/enc_iface.h	/^	Data_In<unsigned int> input_bits;$/;"	m	class:cse_lib::Encoder_Interface
 input_bits	software/cse/modules/source_sink/stat_error_rates_iface.h	/^	Data_In<u_int, DIM> input_bits;$/;"	m	class:cse_lib::Statistics_Error_Rates_Interface
 input_bits	software/cse/modules/transmit/mapper_iface.h	/^	Data_In<unsigned int> input_bits;$/;"	m	class:cse_lib::Mapper_Interface
-input_bits_llr	software/chain/ldpc_dec/dec_ldpc_bin_hw_iface.h	/^	Data_In<int>              input_bits_llr;$/;"	m	class:cse_lib::Decoder_LDPC_Binary_HW_Interface
+input_bits_llr	software/chain/ldpc_dec/dec_ldpc_bin_hw_iface.h	/^	Data_In<T>              input_bits_llr;$/;"	m	class:cse_lib::Decoder_LDPC_Binary_HW_Interface
 input_bits_llr_apriori	software/ems/mimo_detection/mimo_detection_iface.h	/^	Data_In<T> input_bits_llr_apriori;$/;"	m	class:Mimo_Detection_Interface
 input_bits_ref	software/cse/modules/source_sink/stat_error_rates_iface.h	/^	Data_In<u_int> input_bits_ref;$/;"	m	class:cse_lib::Statistics_Error_Rates_Interface
 input_buffer_valid_	software/cse/modules/base/data_io.h	/^	bool input_buffer_valid_;$/;"	m	class:cse_lib::Data_In
-input_cn	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^ofstream input_cn;$/;"	v
 input_data_list_	software/cse/modules/base/base_iface.h	/^	Data_IO_List input_data_list_;$/;"	m	class:cse_lib::Base_Interface
 input_llrs_apriori	software/ems/channel_codes_conv/dec_conv_iface.h	/^	Data_In<T> input_llrs_apriori;$/;"	m	class:Decoder_Convolutional_Interface
 input_permutation_vector	software/ems/mimo_detection/mimo_detection_iface.h	/^	Data_In<int, 2> input_permutation_vector;$/;"	m	class:Mimo_Detection_Interface
@@ -16899,7 +16910,7 @@ mode	software/ems/interleaving/interleaving_table_based_param.h	/^	Param<INTERLE
 modified	software/cse/assistance/config_data_struct_pugixml.h	/^	bool modified()$/;"	f	class:Config_Data_Struct_Pugixml
 modified_	software/cse/assistance/config_data_struct_pugixml.h	/^	bool modified_;$/;"	m	class:Config_Data_Struct_Pugixml
 modulation	software/ems/mimo_detection/mimo_detection_sphere_param.h	/^	Param<Mapper_Share::MAPPINGS_ENUM> modulation;$/;"	m	class:Mimo_Detection_Sphere_Parameter
-msg_ram_	software/chain/ldpc_dec/dec_ldpc_ieee_802_11ad.h	/^	Buffer<int, 2> msg_ram_;  \/\/\/< Extrinsic RAM of LDPC Decoder$/;"	m	class:cse_lib::Decoder_LDPC_IEEE_802_11ad
+msg_ram_	software/chain/ldpc_dec/dec_ldpc_ieee_802_11ad.h	/^	Buffer<T, 2> msg_ram_;  \/\/\/< Extrinsic RAM of LDPC Decoder$/;"	m	class:cse_lib::Decoder_LDPC_IEEE_802_11ad
 mul	software/cse/assistance/gaussian_random_generator.h	/^		__m128d mul(__m128d v, double d) {$/;"	f	class:Gaussian_Random_Generator
 mul	software/cse/assistance/gaussian_random_generator.h	/^		__m128d mul(__m128d v1, __m128d v2) {$/;"	f	class:Gaussian_Random_Generator
 mult_factor_	software/cse/modules/converter/conv_float_fixp.h	/^	unsigned int mult_factor_;$/;"	m	class:cse_lib::Converter_Float_Fixpoint
@@ -17442,7 +17453,6 @@ output	software/cse/modules/interleaving/interleaver_iface.h	/^	Data_Out<T> outp
 output	software/cse/modules/interleaving/interleaving_iface.h	/^	Data_Out<T> output;$/;"	m	class:cse_lib::Interleaving_Interface
 output	software/ems/assistance/constant_factor_iface.h	/^	Data_Out<T> output;$/;"	m	class:Constant_Factor_Interface
 output_	software/cse/modules/base/data_io.h	/^	Buffer<T, dim> output_;$/;"	m	class:cse_lib::Data_Out
-output_app	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^ofstream output_app;$/;"	v
 output_bits	software/chain/ldpc_dec/dec_ldpc_bin_hw_iface.h	/^	Data_Out<unsigned int, 2> output_bits;$/;"	m	class:cse_lib::Decoder_LDPC_Binary_HW_Interface
 output_bits	software/chain/ldpc_enc/enc_iface.h	/^	Data_Out<unsigned int> output_bits;$/;"	m	class:cse_lib::Encoder_Interface
 output_bits	software/cse/modules/encoder/enc_iface.h	/^	Data_Out<unsigned int> output_bits;$/;"	m	class:cse_lib::Encoder_Interface
@@ -17452,14 +17462,13 @@ output_bits	software/ems/channel_codes_conv/dec_conv_iface.h	/^	Data_Out<unsigne
 output_bits	software/ems/mimo_detection/mimo_detection_iface.h	/^	Data_Out<unsigned int, 2> output_bits;$/;"	m	class:Mimo_Detection_Interface
 output_bits_extr	software/ems/mimo_detection/mimo_detection_iface.h	/^	Data_Out<unsigned int, 2> output_bits_extr;$/;"	m	class:Mimo_Detection_Interface
 output_bits_llr	software/cse/modules/transmit/demapper_iface.h	/^	Data_Out<float> output_bits_llr;$/;"	m	class:cse_lib::Demapper_Interface
-output_bits_llr_app	software/chain/ldpc_dec/dec_ldpc_bin_hw_iface.h	/^	Data_Out<int, 2>          output_bits_llr_app;$/;"	m	class:cse_lib::Decoder_LDPC_Binary_HW_Interface
+output_bits_llr_app	software/chain/ldpc_dec/dec_ldpc_bin_hw_iface.h	/^	Data_Out<T, 2>          output_bits_llr_app;$/;"	m	class:cse_lib::Decoder_LDPC_Binary_HW_Interface
 output_bits_llr_app	software/ems/mimo_detection/mimo_detection_iface.h	/^	Data_Out<T> output_bits_llr_app;$/;"	m	class:Mimo_Detection_Interface
 output_bits_llr_extrinsic	software/ems/mimo_detection/mimo_detection_iface.h	/^	Data_Out<T> output_bits_llr_extrinsic;$/;"	m	class:Mimo_Detection_Interface
 output_bits_prob	software/cse/modules/transmit/demapper_iface.h	/^	Data_Out<float, 2> output_bits_prob;$/;"	m	class:cse_lib::Demapper_Interface
 output_channel_matrices	software/ems/channels/mimo_channel_rayleigh_iface.h	/^	Data_Out<complex<T> , 2> output_channel_matrices;$/;"	m	class:Mimo_Channel_Rayleigh_Interface
 output_clipping_value	software/ems/channel_codes_conv/dec_conv_param.h	/^	Param<double> output_clipping_value;$/;"	m	class:Decoder_Convolutional_Parameter
 output_clipping_value	software/ems/mimo_detection/mimo_detection_sphere_param.h	/^	Param<double> output_clipping_value;$/;"	m	class:Mimo_Detection_Sphere_Parameter
-output_cn	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.cpp	/^ofstream output_cn;$/;"	v
 output_data_list_	software/cse/modules/base/base_iface.h	/^	Data_IO_List output_data_list_;$/;"	m	class:cse_lib::Base_Interface
 output_llrs_app	software/ems/channel_codes_conv/dec_conv_iface.h	/^	Data_Out<T> output_llrs_app;$/;"	m	class:Decoder_Convolutional_Interface
 output_llrs_extrinsic	software/ems/channel_codes_conv/dec_conv_iface.h	/^	Data_Out<T> output_llrs_extrinsic;$/;"	m	class:Decoder_Convolutional_Interface
@@ -18272,6 +18281,7 @@ z_	software/chain/ldpc_enc/enc_ldpc_bin_struct_share.h	/^	u_int z_;$/;"	m	class:
 ~Decoder_Convolutional_Parameter	software/ems/channel_codes_conv/dec_conv_param.h	/^	virtual ~Decoder_Convolutional_Parameter() {$/;"	f	class:Decoder_Convolutional_Parameter
 ~Decoder_LDPC_Binary_HW_Interface	software/chain/ldpc_dec/dec_ldpc_bin_hw_iface.h	/^	virtual ~Decoder_LDPC_Binary_HW_Interface() {}$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Interface
 ~Decoder_LDPC_Binary_HW_Share	software/chain/ldpc_dec/dec_ldpc_bin_hw_share.h	/^	virtual ~Decoder_LDPC_Binary_HW_Share() { };$/;"	f	class:cse_lib::Decoder_LDPC_Binary_HW_Share
+~Decoder_LDPC_Check_Node_Share	software/chain/ldpc_dec/dec_ldpc_check_node_share.h	/^	virtual ~Decoder_LDPC_Check_Node_Share(){};$/;"	f	class:cse_lib::Decoder_LDPC_Check_Node_Share
 ~Decoder_LDPC_IEEE_802_11ad	software/chain/ldpc_dec/dec_ldpc_ieee_802_11ad.h	/^	virtual ~Decoder_LDPC_IEEE_802_11ad() { };$/;"	f	class:cse_lib::Decoder_LDPC_IEEE_802_11ad
 ~Decoder_LDPC_IEEE_802_11ad_Parameter	software/chain/ldpc_dec/dec_ldpc_ieee_802_11ad_param.h	/^	virtual ~Decoder_LDPC_IEEE_802_11ad_Parameter(){}$/;"	f	class:cse_lib::Decoder_LDPC_IEEE_802_11ad_Parameter
 ~Demapper_Interface	software/cse/modules/transmit/demapper_iface.h	/^	virtual ~Demapper_Interface(){}$/;"	f	class:cse_lib::Demapper_Interface

@@ -190,7 +190,7 @@ void Decoder_LDPC_Binary_HW_Share::Get_Check_Node_Input(Buffer<int, 2> &app_ram,
 	// Calculate the base address for addressing shift and address vectors.
 	vector_addr = cng_counter * max_check_degree_;
 
-    output_app << "beginning of row\n";
+    // output_app << "beginning of row\n";
 	// Iterate over the single edges.
 	for(unsigned int vn2cn_msg = 0; vn2cn_msg < max_check_degree_; vn2cn_msg++)
 	{
@@ -211,7 +211,7 @@ void Decoder_LDPC_Binary_HW_Share::Get_Check_Node_Input(Buffer<int, 2> &app_ram,
 		if (vng_select > -1)
 		{
 			app_ram_content = app_ram[vn_select][vng_select];
-            output_app << vn2cn_msg << " " << app_ram_content << "\n";
+            // output_app << vn2cn_msg << " " << app_ram_content << "\n";
 
 			// Calculate check node input.
             // if not first iteration
@@ -263,7 +263,7 @@ void Decoder_LDPC_Binary_HW_Share::Get_Check_Node_Input(Buffer<int, 2> &app_ram,
 
 			app_out[vn2cn_msg] = 0;
 
-            output_app << vn2cn_msg << " " << max_msg_extr_ << "\n";
+            // output_app << vn2cn_msg << " " << max_msg_extr_ << "\n";
 		}
 
 		if(is_IRA_code_     &&
@@ -284,7 +284,7 @@ void Decoder_LDPC_Binary_HW_Share::Get_Check_Node_Input(Buffer<int, 2> &app_ram,
 		// Update to next edge.
 		vector_addr++;
 	}
-    output_app << "end of row\n";
+    // output_app << "end of row\n";
 
 	LM_OUT_LEVEL(LDPC, 3, "CNG: " << cng_counter <<
 	                      " CFU: " << cfu_counter <<
@@ -308,7 +308,7 @@ void Decoder_LDPC_Binary_HW_Share::Write_Check_Node_Output(Buffer<int, 2> &app_r
 	// Calculate the base address for shift and address vectors.
 	vector_addr = cng_counter * max_check_degree_;
 
-    input_app << "beginning of row\n";
+    // input_app << "beginning of row\n";
     
 	// Process each edge of the check node separately.
 	for(unsigned int cn2vn_msg = 0; cn2vn_msg < max_check_degree_; cn2vn_msg++)
@@ -356,12 +356,12 @@ void Decoder_LDPC_Binary_HW_Share::Write_Check_Node_Output(Buffer<int, 2> &app_r
             // msg_ram = epsilon(i)
 			app_ram[vn_select][vng_select] = current_app_value;
 			msg_ram[vn_select][vector_addr] = current_message;
-            input_app << cn2vn_msg << " " << current_app_value << "\n";
+            // input_app << cn2vn_msg << " " << current_app_value << "\n";
 		}
 
 		vector_addr++;
 	}
-    input_app << "end of row\n";
+    // input_app << "end of row\n";
 }
 
 
@@ -395,12 +395,12 @@ unsigned int Decoder_LDPC_Binary_HW_Share::Decode_Layered(Buffer<int, 2> &app_ra
 	cn_msg_sign_.Resize(max_check_degree_);
 	unsigned int ok_checks = 0;
 
-    if (!input_cn.is_open()) {
-        input_cn.open("input_cn_layered_high_SNR.txt");
-        output_cn.open("output_cn_layered_high_SNR.txt");
-        input_app.open("input_app_layered_high_SNR.txt");
-        output_app.open("output_app_layered_high_SNR.txt");
-    }
+    // if (!input_cn.is_open()) {
+        // input_cn.open("input_cn_layered_high_SNR.txt");
+        // output_cn.open("output_cn_layered_high_SNR.txt");
+        // input_app.open("input_app_layered_high_SNR.txt");
+        // output_app.open("output_app_layered_high_SNR.txt");
+    // }
 
 	// Iterate over all check node groups.
 	for(unsigned int cng_counter = 0; cng_counter < num_check_nodes_ / dst_parallelism_; cng_counter++)
@@ -409,9 +409,9 @@ unsigned int Decoder_LDPC_Binary_HW_Share::Decode_Layered(Buffer<int, 2> &app_ra
 		for(unsigned int cfu_counter = 0; cfu_counter < dst_parallelism_; cfu_counter++)
 		{
 
-            output_app << "iter: " << iter << "\n";
-            output_app << "cng_counter: " << cng_counter << "\n";
-            output_app << "cfu_counter: " << cfu_counter << "\n";
+            // output_app << "iter: " << iter << "\n";
+            // output_app << "cng_counter: " << cng_counter << "\n";
+            // output_app << "cfu_counter: " << cfu_counter << "\n";
 			Get_Check_Node_Input(app_ram, msg_ram, iter, cng_counter, cfu_counter, check_node_io, app_out);
 
 			ok_checks += (1 - Calc_Parity_Check(app_out));
@@ -421,12 +421,12 @@ unsigned int Decoder_LDPC_Binary_HW_Share::Decode_Layered(Buffer<int, 2> &app_ra
 			case MIN_SUM:
             case MIN_SUM_SELF_CORRECTING:
 
-                input_cn << "iter: " << iter << "\n";
-                output_cn << "iter: " << iter << "\n";
-                input_cn << "cng_counter: " << cng_counter << "\n";
-                output_cn << "cng_counter: " << cng_counter << "\n";
-                input_cn << "cfu_counter: " << cfu_counter << "\n";
-                output_cn << "cfu_counter: " << cfu_counter << "\n";
+                // input_cn << "iter: " << iter << "\n";
+                // output_cn << "iter: " << iter << "\n";
+                // input_cn << "cng_counter: " << cng_counter << "\n";
+                // output_cn << "cng_counter: " << cng_counter << "\n";
+                // input_cn << "cfu_counter: " << cfu_counter << "\n";
+                // output_cn << "cfu_counter: " << cfu_counter << "\n";
 				Check_Node_Min_Sum(check_node_io, esf_factor_); break;
 			case LAMBDA_MIN:
 				Check_Node_Lambda_Min(check_node_io, num_lambda_min_, bw_fract_); break;
@@ -436,9 +436,9 @@ unsigned int Decoder_LDPC_Binary_HW_Share::Decode_Layered(Buffer<int, 2> &app_ra
                 Check_Node_Split_Row(check_node_io, esf_factor_, num_partitions_, threshold_); break;
 			}
 
-            input_app << "iter: " << iter << "\n";
-            input_app << "cng_counter: " << cng_counter << "\n";
-            input_app << "cfu_counter: " << cfu_counter << "\n";
+            // input_app << "iter: " << iter << "\n";
+            // input_app << "cng_counter: " << cng_counter << "\n";
+            // input_app << "cfu_counter: " << cfu_counter << "\n";
 			Write_Check_Node_Output(app_ram, msg_ram, iter, cng_counter, cfu_counter, check_node_io);
 		}
 	}
@@ -547,13 +547,13 @@ unsigned int Decoder_LDPC_Binary_HW_Share::Decode_Two_Phase(Buffer<int, 2> &app_
 	cn_msg_sign_.Resize(max_check_degree_);
 	unsigned int ok_checks = 0;
     
-    input_cn.open("input_cn_two_phase.txt");
-    output_cn.open("output_cn_two_phase.txt");
-    input_app.open("input_app_two_phase.txt");
-    output_app.open("output_app_two_phase.txt");
+    // input_cn.open("input_cn_two_phase.txt");
+    // output_cn.open("output_cn_two_phase.txt");
+    // input_app.open("input_app_two_phase.txt");
+    // output_app.open("output_app_two_phase.txt");
 
-    input_cn << "iter: " << iter << "\n";
-    output_cn << "iter: " << iter << "\n";
+    // input_cn << "iter: " << iter << "\n";
+    // output_cn << "iter: " << iter << "\n";
 
 	// Iterate over all check nodes.
 	for(unsigned int cng_counter = 0; cng_counter < num_cng; cng_counter++)
@@ -580,10 +580,10 @@ unsigned int Decoder_LDPC_Binary_HW_Share::Decode_Two_Phase(Buffer<int, 2> &app_
 			{
 			case MIN_SUM:
             case MIN_SUM_SELF_CORRECTING:
-                input_cn << "cng_counter: " << cng_counter << "\n";
-                input_cn << "cfu_counter: " << cfu_counter << "\n";
-                output_cn << "cng_counter: " << cng_counter << "\n";
-                output_cn << "cfu_counter: " << cfu_counter << "\n";
+                // input_cn << "cng_counter: " << cng_counter << "\n";
+                // input_cn << "cfu_counter: " << cfu_counter << "\n";
+                // output_cn << "cng_counter: " << cng_counter << "\n";
+                // output_cn << "cfu_counter: " << cfu_counter << "\n";
 				Check_Node_Min_Sum(check_node_io[cng_counter][cfu_counter], esf_factor_);
 				break;
 
@@ -600,8 +600,8 @@ unsigned int Decoder_LDPC_Binary_HW_Share::Decode_Two_Phase(Buffer<int, 2> &app_
                 break;
 			}
 
-    input_cn.close();
-    output_cn.close();
+    // input_cn.close();
+    // output_cn.close();
 	// Write back the result of all check nodes.
 	for(unsigned int cng_counter = 0; cng_counter < num_cng; cng_counter++)
 		for(unsigned int cfu_counter = 0; cfu_counter < dst_parallelism_; cfu_counter++)
@@ -703,16 +703,16 @@ int Decoder_LDPC_Binary_HW_Share::Check_Node_Min_Sum(Buffer<int> &in_out_msg, fl
 	unsigned int min_out_msg;
 	unsigned int index = 0;
 
-    input_cn << "beggining of row\n";
+    // input_cn << "beggining of row\n";
 	// Separate magnitude and sign.
 	for (unsigned int i = 0; i < check_node_degree; i++)
 	{
-        input_cn << i << " " << in_out_msg[i] << "\n";
+        // input_cn << i << " " << in_out_msg[i] << "\n";
 		cn_msg_abs_[i]  = abs(in_out_msg[i]);
 		cn_msg_sign_[i] = (in_out_msg[i] >= 0) ? 1 : -1;
 		pchk_sign *= cn_msg_sign_[i];
 	}
-    input_cn << "end of row\n\n";
+    // input_cn << "end of row\n\n";
 
 	// Find the current minimum and remember its magnitude and index.
 	min0_msg = Minimum_Fixp(cn_msg_abs_, index);
@@ -741,7 +741,7 @@ int Decoder_LDPC_Binary_HW_Share::Check_Node_Min_Sum(Buffer<int> &in_out_msg, fl
 		min1_msg = ( ((min1_msg << 1) + (min1_msg << 0) + 1) >> 2);
 	}
 
-    output_cn << "beginning of row\n";
+    // output_cn << "beginning of row\n";
 
 	for(unsigned int i = 0; i < check_node_degree; i++)
 	{
@@ -753,9 +753,9 @@ int Decoder_LDPC_Binary_HW_Share::Check_Node_Min_Sum(Buffer<int> &in_out_msg, fl
 		// Calculate new outgoing edge with new sign and new magnitude.
         // converted again to 2's complement
 		in_out_msg[i] = min_out_msg * cn_msg_sign_[i] * pchk_sign;
-        output_cn << i << " " << in_out_msg[i] << "\n";
+        // output_cn << i << " " << in_out_msg[i] << "\n";
 	}
-    output_cn << "end of row\n";
+    // output_cn << "end of row\n";
 
 	return pchk_sign;
 }

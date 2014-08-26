@@ -53,8 +53,8 @@
 		<!-- start_seed>123123</start_seed -->
 		<num_bits><global_variable name="num_info_bits"/></num_bits>
 		<crc_poly>0</crc_poly>
-		<mode>Random</mode>
-		<!--<mode>All_zero</mode>-->
+		<!-- <mode>Random</mode> -->
+		<mode>All_zero</mode>
 	</module>
 
 	<module>
