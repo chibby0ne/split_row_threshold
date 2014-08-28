@@ -1,0 +1,1848 @@
+<?xml version="1.0"?>
+<cse>
+	<meta_information>
+		<executable_name>WPAN</executable_name>
+		<simulation_date>Tue Aug 12 19:24:34 2014</simulation_date>
+	</meta_information>
+	<initial_configuration>
+		<cse_chain>
+			<global>
+				<variable name="num_info_bits">336</variable>
+				<variable name="num_other_bits">336</variable>
+				<variable name="ldpc_code_rate">IEEE_802_11ad_P42_N672_R081</variable>
+				<variable name="num_bits_per_symbol">2</variable>
+				<variable name="mapping">MAP_QPSK</variable>
+				<variable name="num_ldpc_inner_iterations">10</variable>
+				<variable name="bw_fl2fix">6</variable>
+				<variable name="bw_fl2fix_fract">2</variable>
+				<variable name="bw_dec_app">9</variable>
+				<variable name="bw_dec_ext">6</variable>
+				<variable name="bw_dec_fract">2</variable>
+				<iter>
+					<variable name="eb_n0">1:1:10</variable>
+				</iter>
+				<variable name="es_n0">
+					<param param_unit="SNR" name="es_n0" />
+				</variable>
+				<variable name="noise_variance">
+					<param param_unit="SNR" name="noise_variance" />
+				</variable>
+			</global>
+			<param_unit unique_id="Param_Unit_SNR">
+				<instance_name>SNR</instance_name>
+				<input_snr>
+					<global_variable name="eb_n0" />
+				</input_snr>
+				<input_type>EB_N0</input_type>
+				<num_info_bits>
+					<global_variable name="num_info_bits" />
+				</num_info_bits>
+				<num_other_bits>
+					<global_variable name="num_other_bits" />
+				</num_other_bits>
+				<num_bits_per_symbol>
+					<global_variable name="num_bits_per_symbol" />
+				</num_bits_per_symbol>
+				<param name="noise_variance" />
+				<param name="es_n0" />
+				<param name="eb_n0" />
+			</param_unit>
+			<module>
+				<instance_name>Source_Bits</instance_name>
+				<num_bits>
+					<global_variable name="num_info_bits" />
+				</num_bits>
+				<crc_poly>0</crc_poly>
+				<mode>Random</mode>
+			</module>
+			<module>
+				<instance_name>Encoder_LDPC_IEEE_802_11ad</instance_name>
+				<ldpc_code>
+					<global_variable name="ldpc_code_rate" />
+				</ldpc_code>
+			</module>
+			<module>
+				<instance_name>Mapper</instance_name>
+				<mapping>
+					<global_variable name="mapping" />
+				</mapping>
+			</module>
+			<module>
+				<instance_name>Channel_AWGN</instance_name>
+				<noise_variance>
+					<global_variable name="noise_variance" />
+				</noise_variance>
+			</module>
+			<module>
+				<instance_name>Demapper</instance_name>
+				<mapping>
+					<global_variable name="mapping" />
+				</mapping>
+				<noise_variance>
+					<global_variable name="noise_variance" />
+				</noise_variance>
+			</module>
+			<module>
+				<instance_name>Converter_Float_Fixpoint</instance_name>
+				<bw_output>
+					<global_variable name="bw_fl2fix" />
+				</bw_output>
+				<bw_output_fract>
+					<global_variable name="bw_fl2fix_fract" />
+				</bw_output_fract>
+			</module>
+			<module>
+				<instance_name>Decoder_LDPC_IEEE_802_11ad</instance_name>
+				<bw_fract>
+					<global_variable name="bw_dec_fract" />
+				</bw_fract>
+				<bw_extr>
+					<global_variable name="bw_dec_ext" />
+				</bw_extr>
+				<bw_app>
+					<global_variable name="bw_dec_app" />
+				</bw_app>
+				<esf_factor>0.875</esf_factor>
+				<dec_algorithm>MIN_SUM</dec_algorithm>
+				<scheduling>LAYERED</scheduling>
+				<ldpc_code>
+					<global_variable name="ldpc_code_rate" />
+				</ldpc_code>
+			</module>
+			<module>
+				<instance_name>error_rates_decoding</instance_name>
+				<max_num_diff_blocks>10</max_num_diff_blocks>
+				<max_num_total_blocks>10</max_num_total_blocks>
+			</module>
+		</cse_chain>
+	</initial_configuration>
+	<iter_var name="eb_n0" value="1">
+		<configuration>
+			<cse_chain>
+				<global>
+					<variable name="num_info_bits">336</variable>
+					<variable name="num_other_bits">336</variable>
+					<variable name="ldpc_code_rate">IEEE_802_11ad_P42_N672_R081</variable>
+					<variable name="num_bits_per_symbol">2</variable>
+					<variable name="mapping">MAP_QPSK</variable>
+					<variable name="num_ldpc_inner_iterations">10</variable>
+					<variable name="bw_fl2fix">6</variable>
+					<variable name="bw_fl2fix_fract">2</variable>
+					<variable name="bw_dec_app">9</variable>
+					<variable name="bw_dec_ext">6</variable>
+					<variable name="bw_dec_fract">2</variable>
+					<iter>
+						<variable name="eb_n0">1</variable>
+					</iter>
+					<variable name="es_n0">1</variable>
+					<variable name="noise_variance">0.794328</variable>
+				</global>
+				<param_unit unique_id="Param_Unit_SNR">
+					<instance_name>SNR</instance_name>
+					<input_snr>1</input_snr>
+					<input_type>EB_N0</input_type>
+					<num_info_bits>336</num_info_bits>
+					<num_other_bits>336</num_other_bits>
+					<num_bits_per_symbol>2</num_bits_per_symbol>
+					<param name="noise_variance">0.794328</param>
+					<param name="eb_n0">1</param>
+					<param name="es_n0">1</param>
+				</param_unit>
+				<module>
+					<instance_name>Source_Bits</instance_name>
+					<num_bits>336</num_bits>
+					<crc_poly>0</crc_poly>
+					<mode>Random</mode>
+					<start_seed>7878089</start_seed>
+				</module>
+				<module>
+					<instance_name>Encoder_LDPC_IEEE_802_11ad</instance_name>
+					<ldpc_code>IEEE_802_11ad_P42_N672_R081</ldpc_code>
+				</module>
+				<module>
+					<instance_name>Mapper</instance_name>
+					<mapping>MAP_QPSK</mapping>
+				</module>
+				<module>
+					<instance_name>Channel_AWGN</instance_name>
+					<noise_variance>0.794328</noise_variance>
+					<start_seed>12424</start_seed>
+				</module>
+				<module>
+					<instance_name>Demapper</instance_name>
+					<mapping>MAP_QPSK</mapping>
+					<noise_variance>0.794328</noise_variance>
+					<channel_reliability>OPTIMAL_CRF</channel_reliability>
+				</module>
+				<module>
+					<instance_name>Converter_Float_Fixpoint</instance_name>
+					<bw_output>6</bw_output>
+					<bw_output_fract>2</bw_output_fract>
+				</module>
+				<module>
+					<instance_name>Decoder_LDPC_IEEE_802_11ad</instance_name>
+					<bw_fract>2</bw_fract>
+					<bw_extr>6</bw_extr>
+					<bw_app>9</bw_app>
+					<esf_factor>0.875</esf_factor>
+					<dec_algorithm>MIN_SUM</dec_algorithm>
+					<scheduling>LAYERED</scheduling>
+					<ldpc_code>IEEE_802_11ad_P42_N672_R081</ldpc_code>
+					<num_iterations>10</num_iterations>
+					<num_lambda_min>3</num_lambda_min>
+					<app_parity_check>TRUE</app_parity_check>
+					<num_partitions>2</num_partitions>
+					<threshold>16</threshold>
+				</module>
+				<module>
+					<instance_name>error_rates_decoding</instance_name>
+					<max_num_diff_blocks>10</max_num_diff_blocks>
+					<max_num_total_blocks>10</max_num_total_blocks>
+					<print_status_permanent>TRUE</print_status_permanent>
+					<out_port_inner_dim_name>iteration</out_port_inner_dim_name>
+					<out_port_inner_dim_addr_offset>1</out_port_inner_dim_addr_offset>
+				</module>
+			</cse_chain>
+		</configuration>
+		<result>
+			<module name="error_rates_decoding">
+				<status_out name="num_total_bits">
+					<value>3360</value>
+				</status_out>
+				<status_out name="num_diff_bits">
+					<value iteration="1">521</value>
+					<value iteration="2">523</value>
+					<value iteration="3">511</value>
+					<value iteration="4">525</value>
+					<value iteration="5">535</value>
+					<value iteration="6">535</value>
+					<value iteration="7">514</value>
+					<value iteration="8">535</value>
+					<value iteration="9">518</value>
+					<value iteration="10">527</value>
+				</status_out>
+				<status_out name="error_rate_bits">
+					<value iteration="1">0.15506</value>
+					<value iteration="2">0.155655</value>
+					<value iteration="3">0.152083</value>
+					<value iteration="4">0.15625</value>
+					<value iteration="5">0.159226</value>
+					<value iteration="6">0.159226</value>
+					<value iteration="7">0.152976</value>
+					<value iteration="8">0.159226</value>
+					<value iteration="9">0.154167</value>
+					<value iteration="10">0.156845</value>
+				</status_out>
+				<status_out name="num_total_blocks">
+					<value>10</value>
+				</status_out>
+				<status_out name="num_diff_blocks">
+					<value iteration="1">10</value>
+					<value iteration="2">10</value>
+					<value iteration="3">10</value>
+					<value iteration="4">10</value>
+					<value iteration="5">10</value>
+					<value iteration="6">10</value>
+					<value iteration="7">10</value>
+					<value iteration="8">10</value>
+					<value iteration="9">10</value>
+					<value iteration="10">10</value>
+				</status_out>
+				<status_out name="error_rate_blocks">
+					<value iteration="1">1</value>
+					<value iteration="2">1</value>
+					<value iteration="3">1</value>
+					<value iteration="4">1</value>
+					<value iteration="5">1</value>
+					<value iteration="6">1</value>
+					<value iteration="7">1</value>
+					<value iteration="8">1</value>
+					<value iteration="9">1</value>
+					<value iteration="10">1</value>
+				</status_out>
+			</module>
+			<module name="Decoder_LDPC_IEEE_802_11ad">
+				<status_out name="mean_iterations">
+					<value dim_0="1">1</value>
+					<value dim_0="2">2</value>
+					<value dim_0="3">3</value>
+					<value dim_0="4">4</value>
+					<value dim_0="5">5</value>
+					<value dim_0="6">6</value>
+					<value dim_0="7">7</value>
+					<value dim_0="8">8</value>
+					<value dim_0="9">9</value>
+					<value dim_0="10">10</value>
+				</status_out>
+				<status_out name="flipped_bits">
+					<value dim_0="1">29</value>
+					<value dim_0="2">43</value>
+					<value dim_0="3">34</value>
+					<value dim_0="4">24</value>
+					<value dim_0="5">32</value>
+					<value dim_0="6">38</value>
+					<value dim_0="7">29</value>
+					<value dim_0="8">43</value>
+					<value dim_0="9">33</value>
+				</status_out>
+			</module>
+		</result>
+	</iter_var>
+	<iter_var name="eb_n0" value="2">
+		<configuration>
+			<cse_chain>
+				<global>
+					<variable name="num_info_bits">336</variable>
+					<variable name="num_other_bits">336</variable>
+					<variable name="ldpc_code_rate">IEEE_802_11ad_P42_N672_R081</variable>
+					<variable name="num_bits_per_symbol">2</variable>
+					<variable name="mapping">MAP_QPSK</variable>
+					<variable name="num_ldpc_inner_iterations">10</variable>
+					<variable name="bw_fl2fix">6</variable>
+					<variable name="bw_fl2fix_fract">2</variable>
+					<variable name="bw_dec_app">9</variable>
+					<variable name="bw_dec_ext">6</variable>
+					<variable name="bw_dec_fract">2</variable>
+					<iter>
+						<variable name="eb_n0">2</variable>
+					</iter>
+					<variable name="es_n0">2</variable>
+					<variable name="noise_variance">0.630957</variable>
+				</global>
+				<param_unit unique_id="Param_Unit_SNR">
+					<instance_name>SNR</instance_name>
+					<input_snr>2</input_snr>
+					<input_type>EB_N0</input_type>
+					<num_info_bits>336</num_info_bits>
+					<num_other_bits>336</num_other_bits>
+					<num_bits_per_symbol>2</num_bits_per_symbol>
+					<param name="noise_variance">0.630957</param>
+					<param name="eb_n0">2</param>
+					<param name="es_n0">2</param>
+				</param_unit>
+				<module>
+					<instance_name>Source_Bits</instance_name>
+					<num_bits>336</num_bits>
+					<crc_poly>0</crc_poly>
+					<mode>Random</mode>
+					<start_seed>7878089</start_seed>
+				</module>
+				<module>
+					<instance_name>Encoder_LDPC_IEEE_802_11ad</instance_name>
+					<ldpc_code>IEEE_802_11ad_P42_N672_R081</ldpc_code>
+				</module>
+				<module>
+					<instance_name>Mapper</instance_name>
+					<mapping>MAP_QPSK</mapping>
+				</module>
+				<module>
+					<instance_name>Channel_AWGN</instance_name>
+					<noise_variance>0.630957</noise_variance>
+					<start_seed>12424</start_seed>
+				</module>
+				<module>
+					<instance_name>Demapper</instance_name>
+					<mapping>MAP_QPSK</mapping>
+					<noise_variance>0.630957</noise_variance>
+					<channel_reliability>OPTIMAL_CRF</channel_reliability>
+				</module>
+				<module>
+					<instance_name>Converter_Float_Fixpoint</instance_name>
+					<bw_output>6</bw_output>
+					<bw_output_fract>2</bw_output_fract>
+				</module>
+				<module>
+					<instance_name>Decoder_LDPC_IEEE_802_11ad</instance_name>
+					<bw_fract>2</bw_fract>
+					<bw_extr>6</bw_extr>
+					<bw_app>9</bw_app>
+					<esf_factor>0.875</esf_factor>
+					<dec_algorithm>MIN_SUM</dec_algorithm>
+					<scheduling>LAYERED</scheduling>
+					<ldpc_code>IEEE_802_11ad_P42_N672_R081</ldpc_code>
+					<num_iterations>10</num_iterations>
+					<num_lambda_min>3</num_lambda_min>
+					<app_parity_check>TRUE</app_parity_check>
+					<num_partitions>2</num_partitions>
+					<threshold>16</threshold>
+				</module>
+				<module>
+					<instance_name>error_rates_decoding</instance_name>
+					<max_num_diff_blocks>10</max_num_diff_blocks>
+					<max_num_total_blocks>10</max_num_total_blocks>
+					<print_status_permanent>TRUE</print_status_permanent>
+					<out_port_inner_dim_name>iteration</out_port_inner_dim_name>
+					<out_port_inner_dim_addr_offset>1</out_port_inner_dim_addr_offset>
+				</module>
+			</cse_chain>
+		</configuration>
+		<result>
+			<module name="error_rates_decoding">
+				<status_out name="num_total_bits">
+					<value>3360</value>
+				</status_out>
+				<status_out name="num_diff_bits">
+					<value iteration="1">420</value>
+					<value iteration="2">427</value>
+					<value iteration="3">420</value>
+					<value iteration="4">437</value>
+					<value iteration="5">420</value>
+					<value iteration="6">427</value>
+					<value iteration="7">422</value>
+					<value iteration="8">432</value>
+					<value iteration="9">418</value>
+					<value iteration="10">420</value>
+				</status_out>
+				<status_out name="error_rate_bits">
+					<value iteration="1">0.125</value>
+					<value iteration="2">0.127083</value>
+					<value iteration="3">0.125</value>
+					<value iteration="4">0.13006</value>
+					<value iteration="5">0.125</value>
+					<value iteration="6">0.127083</value>
+					<value iteration="7">0.125595</value>
+					<value iteration="8">0.128571</value>
+					<value iteration="9">0.124405</value>
+					<value iteration="10">0.125</value>
+				</status_out>
+				<status_out name="num_total_blocks">
+					<value>10</value>
+				</status_out>
+				<status_out name="num_diff_blocks">
+					<value iteration="1">10</value>
+					<value iteration="2">10</value>
+					<value iteration="3">10</value>
+					<value iteration="4">10</value>
+					<value iteration="5">10</value>
+					<value iteration="6">10</value>
+					<value iteration="7">10</value>
+					<value iteration="8">10</value>
+					<value iteration="9">10</value>
+					<value iteration="10">10</value>
+				</status_out>
+				<status_out name="error_rate_blocks">
+					<value iteration="1">1</value>
+					<value iteration="2">1</value>
+					<value iteration="3">1</value>
+					<value iteration="4">1</value>
+					<value iteration="5">1</value>
+					<value iteration="6">1</value>
+					<value iteration="7">1</value>
+					<value iteration="8">1</value>
+					<value iteration="9">1</value>
+					<value iteration="10">1</value>
+				</status_out>
+			</module>
+			<module name="Decoder_LDPC_IEEE_802_11ad">
+				<status_out name="mean_iterations">
+					<value dim_0="1">1</value>
+					<value dim_0="2">2</value>
+					<value dim_0="3">3</value>
+					<value dim_0="4">4</value>
+					<value dim_0="5">5</value>
+					<value dim_0="6">6</value>
+					<value dim_0="7">7</value>
+					<value dim_0="8">8</value>
+					<value dim_0="9">9</value>
+					<value dim_0="10">10</value>
+				</status_out>
+				<status_out name="flipped_bits">
+					<value dim_0="0">0</value>
+					<value dim_0="1">33</value>
+					<value dim_0="2">32</value>
+					<value dim_0="3">25</value>
+					<value dim_0="4">31</value>
+					<value dim_0="5">28</value>
+					<value dim_0="6">25</value>
+					<value dim_0="7">23</value>
+					<value dim_0="8">18</value>
+					<value dim_0="9">20</value>
+				</status_out>
+			</module>
+		</result>
+	</iter_var>
+	<iter_var name="eb_n0" value="3">
+		<configuration>
+			<cse_chain>
+				<global>
+					<variable name="num_info_bits">336</variable>
+					<variable name="num_other_bits">336</variable>
+					<variable name="ldpc_code_rate">IEEE_802_11ad_P42_N672_R081</variable>
+					<variable name="num_bits_per_symbol">2</variable>
+					<variable name="mapping">MAP_QPSK</variable>
+					<variable name="num_ldpc_inner_iterations">10</variable>
+					<variable name="bw_fl2fix">6</variable>
+					<variable name="bw_fl2fix_fract">2</variable>
+					<variable name="bw_dec_app">9</variable>
+					<variable name="bw_dec_ext">6</variable>
+					<variable name="bw_dec_fract">2</variable>
+					<iter>
+						<variable name="eb_n0">3</variable>
+					</iter>
+					<variable name="es_n0">3</variable>
+					<variable name="noise_variance">0.501187</variable>
+				</global>
+				<param_unit unique_id="Param_Unit_SNR">
+					<instance_name>SNR</instance_name>
+					<input_snr>3</input_snr>
+					<input_type>EB_N0</input_type>
+					<num_info_bits>336</num_info_bits>
+					<num_other_bits>336</num_other_bits>
+					<num_bits_per_symbol>2</num_bits_per_symbol>
+					<param name="noise_variance">0.501187</param>
+					<param name="eb_n0">3</param>
+					<param name="es_n0">3</param>
+				</param_unit>
+				<module>
+					<instance_name>Source_Bits</instance_name>
+					<num_bits>336</num_bits>
+					<crc_poly>0</crc_poly>
+					<mode>Random</mode>
+					<start_seed>7878089</start_seed>
+				</module>
+				<module>
+					<instance_name>Encoder_LDPC_IEEE_802_11ad</instance_name>
+					<ldpc_code>IEEE_802_11ad_P42_N672_R081</ldpc_code>
+				</module>
+				<module>
+					<instance_name>Mapper</instance_name>
+					<mapping>MAP_QPSK</mapping>
+				</module>
+				<module>
+					<instance_name>Channel_AWGN</instance_name>
+					<noise_variance>0.501187</noise_variance>
+					<start_seed>12424</start_seed>
+				</module>
+				<module>
+					<instance_name>Demapper</instance_name>
+					<mapping>MAP_QPSK</mapping>
+					<noise_variance>0.501187</noise_variance>
+					<channel_reliability>OPTIMAL_CRF</channel_reliability>
+				</module>
+				<module>
+					<instance_name>Converter_Float_Fixpoint</instance_name>
+					<bw_output>6</bw_output>
+					<bw_output_fract>2</bw_output_fract>
+				</module>
+				<module>
+					<instance_name>Decoder_LDPC_IEEE_802_11ad</instance_name>
+					<bw_fract>2</bw_fract>
+					<bw_extr>6</bw_extr>
+					<bw_app>9</bw_app>
+					<esf_factor>0.875</esf_factor>
+					<dec_algorithm>MIN_SUM</dec_algorithm>
+					<scheduling>LAYERED</scheduling>
+					<ldpc_code>IEEE_802_11ad_P42_N672_R081</ldpc_code>
+					<num_iterations>10</num_iterations>
+					<num_lambda_min>3</num_lambda_min>
+					<app_parity_check>TRUE</app_parity_check>
+					<num_partitions>2</num_partitions>
+					<threshold>16</threshold>
+				</module>
+				<module>
+					<instance_name>error_rates_decoding</instance_name>
+					<max_num_diff_blocks>10</max_num_diff_blocks>
+					<max_num_total_blocks>10</max_num_total_blocks>
+					<print_status_permanent>TRUE</print_status_permanent>
+					<out_port_inner_dim_name>iteration</out_port_inner_dim_name>
+					<out_port_inner_dim_addr_offset>1</out_port_inner_dim_addr_offset>
+				</module>
+			</cse_chain>
+		</configuration>
+		<result>
+			<module name="error_rates_decoding">
+				<status_out name="num_total_bits">
+					<value>3360</value>
+				</status_out>
+				<status_out name="num_diff_bits">
+					<value iteration="1">304</value>
+					<value iteration="2">308</value>
+					<value iteration="3">311</value>
+					<value iteration="4">303</value>
+					<value iteration="5">302</value>
+					<value iteration="6">317</value>
+					<value iteration="7">328</value>
+					<value iteration="8">311</value>
+					<value iteration="9">321</value>
+					<value iteration="10">308</value>
+				</status_out>
+				<status_out name="error_rate_bits">
+					<value iteration="1">0.0904762</value>
+					<value iteration="2">0.0916667</value>
+					<value iteration="3">0.0925595</value>
+					<value iteration="4">0.0901786</value>
+					<value iteration="5">0.089881</value>
+					<value iteration="6">0.0943452</value>
+					<value iteration="7">0.097619</value>
+					<value iteration="8">0.0925595</value>
+					<value iteration="9">0.0955357</value>
+					<value iteration="10">0.0916667</value>
+				</status_out>
+				<status_out name="num_total_blocks">
+					<value>10</value>
+				</status_out>
+				<status_out name="num_diff_blocks">
+					<value iteration="1">10</value>
+					<value iteration="2">10</value>
+					<value iteration="3">10</value>
+					<value iteration="4">10</value>
+					<value iteration="5">10</value>
+					<value iteration="6">10</value>
+					<value iteration="7">10</value>
+					<value iteration="8">10</value>
+					<value iteration="9">10</value>
+					<value iteration="10">10</value>
+				</status_out>
+				<status_out name="error_rate_blocks">
+					<value iteration="1">1</value>
+					<value iteration="2">1</value>
+					<value iteration="3">1</value>
+					<value iteration="4">1</value>
+					<value iteration="5">1</value>
+					<value iteration="6">1</value>
+					<value iteration="7">1</value>
+					<value iteration="8">1</value>
+					<value iteration="9">1</value>
+					<value iteration="10">1</value>
+				</status_out>
+			</module>
+			<module name="Decoder_LDPC_IEEE_802_11ad">
+				<status_out name="mean_iterations">
+					<value dim_0="1">1</value>
+					<value dim_0="2">2</value>
+					<value dim_0="3">3</value>
+					<value dim_0="4">4</value>
+					<value dim_0="5">5</value>
+					<value dim_0="6">6</value>
+					<value dim_0="7">7</value>
+					<value dim_0="8">8</value>
+					<value dim_0="9">9</value>
+					<value dim_0="10">10</value>
+				</status_out>
+				<status_out name="flipped_bits">
+					<value dim_0="0">0</value>
+					<value dim_0="1">20</value>
+					<value dim_0="2">17</value>
+					<value dim_0="3">18</value>
+					<value dim_0="4">28</value>
+					<value dim_0="5">23</value>
+					<value dim_0="6">16</value>
+					<value dim_0="7">16</value>
+					<value dim_0="8">21</value>
+					<value dim_0="9">25</value>
+				</status_out>
+			</module>
+		</result>
+	</iter_var>
+	<iter_var name="eb_n0" value="4">
+		<configuration>
+			<cse_chain>
+				<global>
+					<variable name="num_info_bits">336</variable>
+					<variable name="num_other_bits">336</variable>
+					<variable name="ldpc_code_rate">IEEE_802_11ad_P42_N672_R081</variable>
+					<variable name="num_bits_per_symbol">2</variable>
+					<variable name="mapping">MAP_QPSK</variable>
+					<variable name="num_ldpc_inner_iterations">10</variable>
+					<variable name="bw_fl2fix">6</variable>
+					<variable name="bw_fl2fix_fract">2</variable>
+					<variable name="bw_dec_app">9</variable>
+					<variable name="bw_dec_ext">6</variable>
+					<variable name="bw_dec_fract">2</variable>
+					<iter>
+						<variable name="eb_n0">4</variable>
+					</iter>
+					<variable name="es_n0">4</variable>
+					<variable name="noise_variance">0.398107</variable>
+				</global>
+				<param_unit unique_id="Param_Unit_SNR">
+					<instance_name>SNR</instance_name>
+					<input_snr>4</input_snr>
+					<input_type>EB_N0</input_type>
+					<num_info_bits>336</num_info_bits>
+					<num_other_bits>336</num_other_bits>
+					<num_bits_per_symbol>2</num_bits_per_symbol>
+					<param name="noise_variance">0.398107</param>
+					<param name="eb_n0">4</param>
+					<param name="es_n0">4</param>
+				</param_unit>
+				<module>
+					<instance_name>Source_Bits</instance_name>
+					<num_bits>336</num_bits>
+					<crc_poly>0</crc_poly>
+					<mode>Random</mode>
+					<start_seed>7878089</start_seed>
+				</module>
+				<module>
+					<instance_name>Encoder_LDPC_IEEE_802_11ad</instance_name>
+					<ldpc_code>IEEE_802_11ad_P42_N672_R081</ldpc_code>
+				</module>
+				<module>
+					<instance_name>Mapper</instance_name>
+					<mapping>MAP_QPSK</mapping>
+				</module>
+				<module>
+					<instance_name>Channel_AWGN</instance_name>
+					<noise_variance>0.398107</noise_variance>
+					<start_seed>12424</start_seed>
+				</module>
+				<module>
+					<instance_name>Demapper</instance_name>
+					<mapping>MAP_QPSK</mapping>
+					<noise_variance>0.398107</noise_variance>
+					<channel_reliability>OPTIMAL_CRF</channel_reliability>
+				</module>
+				<module>
+					<instance_name>Converter_Float_Fixpoint</instance_name>
+					<bw_output>6</bw_output>
+					<bw_output_fract>2</bw_output_fract>
+				</module>
+				<module>
+					<instance_name>Decoder_LDPC_IEEE_802_11ad</instance_name>
+					<bw_fract>2</bw_fract>
+					<bw_extr>6</bw_extr>
+					<bw_app>9</bw_app>
+					<esf_factor>0.875</esf_factor>
+					<dec_algorithm>MIN_SUM</dec_algorithm>
+					<scheduling>LAYERED</scheduling>
+					<ldpc_code>IEEE_802_11ad_P42_N672_R081</ldpc_code>
+					<num_iterations>10</num_iterations>
+					<num_lambda_min>3</num_lambda_min>
+					<app_parity_check>TRUE</app_parity_check>
+					<num_partitions>2</num_partitions>
+					<threshold>16</threshold>
+				</module>
+				<module>
+					<instance_name>error_rates_decoding</instance_name>
+					<max_num_diff_blocks>10</max_num_diff_blocks>
+					<max_num_total_blocks>10</max_num_total_blocks>
+					<print_status_permanent>TRUE</print_status_permanent>
+					<out_port_inner_dim_name>iteration</out_port_inner_dim_name>
+					<out_port_inner_dim_addr_offset>1</out_port_inner_dim_addr_offset>
+				</module>
+			</cse_chain>
+		</configuration>
+		<result>
+			<module name="error_rates_decoding">
+				<status_out name="num_total_bits">
+					<value>3360</value>
+				</status_out>
+				<status_out name="num_diff_bits">
+					<value iteration="1">201</value>
+					<value iteration="2">184</value>
+					<value iteration="3">185</value>
+					<value iteration="4">195</value>
+					<value iteration="5">184</value>
+					<value iteration="6">185</value>
+					<value iteration="7">192</value>
+					<value iteration="8">192</value>
+					<value iteration="9">180</value>
+					<value iteration="10">174</value>
+				</status_out>
+				<status_out name="error_rate_bits">
+					<value iteration="1">0.0598214</value>
+					<value iteration="2">0.0547619</value>
+					<value iteration="3">0.0550595</value>
+					<value iteration="4">0.0580357</value>
+					<value iteration="5">0.0547619</value>
+					<value iteration="6">0.0550595</value>
+					<value iteration="7">0.0571429</value>
+					<value iteration="8">0.0571429</value>
+					<value iteration="9">0.0535714</value>
+					<value iteration="10">0.0517857</value>
+				</status_out>
+				<status_out name="num_total_blocks">
+					<value>10</value>
+				</status_out>
+				<status_out name="num_diff_blocks">
+					<value iteration="1">10</value>
+					<value iteration="2">10</value>
+					<value iteration="3">10</value>
+					<value iteration="4">10</value>
+					<value iteration="5">10</value>
+					<value iteration="6">10</value>
+					<value iteration="7">10</value>
+					<value iteration="8">10</value>
+					<value iteration="9">10</value>
+					<value iteration="10">10</value>
+				</status_out>
+				<status_out name="error_rate_blocks">
+					<value iteration="1">1</value>
+					<value iteration="2">1</value>
+					<value iteration="3">1</value>
+					<value iteration="4">1</value>
+					<value iteration="5">1</value>
+					<value iteration="6">1</value>
+					<value iteration="7">1</value>
+					<value iteration="8">1</value>
+					<value iteration="9">1</value>
+					<value iteration="10">1</value>
+				</status_out>
+			</module>
+			<module name="Decoder_LDPC_IEEE_802_11ad">
+				<status_out name="mean_iterations">
+					<value dim_0="1">1</value>
+					<value dim_0="2">2</value>
+					<value dim_0="3">3</value>
+					<value dim_0="4">4</value>
+					<value dim_0="5">5</value>
+					<value dim_0="6">6</value>
+					<value dim_0="7">7</value>
+					<value dim_0="8">8</value>
+					<value dim_0="9">9</value>
+					<value dim_0="10">10</value>
+				</status_out>
+				<status_out name="flipped_bits">
+					<value dim_0="0">0</value>
+					<value dim_0="1">14</value>
+					<value dim_0="2">12</value>
+					<value dim_0="3">27</value>
+					<value dim_0="4">22</value>
+					<value dim_0="5">20</value>
+					<value dim_0="6">20</value>
+					<value dim_0="7">19</value>
+					<value dim_0="8">20</value>
+					<value dim_0="9">13</value>
+				</status_out>
+			</module>
+		</result>
+	</iter_var>
+	<iter_var name="eb_n0" value="5">
+		<configuration>
+			<cse_chain>
+				<global>
+					<variable name="num_info_bits">336</variable>
+					<variable name="num_other_bits">336</variable>
+					<variable name="ldpc_code_rate">IEEE_802_11ad_P42_N672_R081</variable>
+					<variable name="num_bits_per_symbol">2</variable>
+					<variable name="mapping">MAP_QPSK</variable>
+					<variable name="num_ldpc_inner_iterations">10</variable>
+					<variable name="bw_fl2fix">6</variable>
+					<variable name="bw_fl2fix_fract">2</variable>
+					<variable name="bw_dec_app">9</variable>
+					<variable name="bw_dec_ext">6</variable>
+					<variable name="bw_dec_fract">2</variable>
+					<iter>
+						<variable name="eb_n0">5</variable>
+					</iter>
+					<variable name="es_n0">5</variable>
+					<variable name="noise_variance">0.316228</variable>
+				</global>
+				<param_unit unique_id="Param_Unit_SNR">
+					<instance_name>SNR</instance_name>
+					<input_snr>5</input_snr>
+					<input_type>EB_N0</input_type>
+					<num_info_bits>336</num_info_bits>
+					<num_other_bits>336</num_other_bits>
+					<num_bits_per_symbol>2</num_bits_per_symbol>
+					<param name="noise_variance">0.316228</param>
+					<param name="eb_n0">5</param>
+					<param name="es_n0">5</param>
+				</param_unit>
+				<module>
+					<instance_name>Source_Bits</instance_name>
+					<num_bits>336</num_bits>
+					<crc_poly>0</crc_poly>
+					<mode>Random</mode>
+					<start_seed>7878089</start_seed>
+				</module>
+				<module>
+					<instance_name>Encoder_LDPC_IEEE_802_11ad</instance_name>
+					<ldpc_code>IEEE_802_11ad_P42_N672_R081</ldpc_code>
+				</module>
+				<module>
+					<instance_name>Mapper</instance_name>
+					<mapping>MAP_QPSK</mapping>
+				</module>
+				<module>
+					<instance_name>Channel_AWGN</instance_name>
+					<noise_variance>0.316228</noise_variance>
+					<start_seed>12424</start_seed>
+				</module>
+				<module>
+					<instance_name>Demapper</instance_name>
+					<mapping>MAP_QPSK</mapping>
+					<noise_variance>0.316228</noise_variance>
+					<channel_reliability>OPTIMAL_CRF</channel_reliability>
+				</module>
+				<module>
+					<instance_name>Converter_Float_Fixpoint</instance_name>
+					<bw_output>6</bw_output>
+					<bw_output_fract>2</bw_output_fract>
+				</module>
+				<module>
+					<instance_name>Decoder_LDPC_IEEE_802_11ad</instance_name>
+					<bw_fract>2</bw_fract>
+					<bw_extr>6</bw_extr>
+					<bw_app>9</bw_app>
+					<esf_factor>0.875</esf_factor>
+					<dec_algorithm>MIN_SUM</dec_algorithm>
+					<scheduling>LAYERED</scheduling>
+					<ldpc_code>IEEE_802_11ad_P42_N672_R081</ldpc_code>
+					<num_iterations>10</num_iterations>
+					<num_lambda_min>3</num_lambda_min>
+					<app_parity_check>TRUE</app_parity_check>
+					<num_partitions>2</num_partitions>
+					<threshold>16</threshold>
+				</module>
+				<module>
+					<instance_name>error_rates_decoding</instance_name>
+					<max_num_diff_blocks>10</max_num_diff_blocks>
+					<max_num_total_blocks>10</max_num_total_blocks>
+					<print_status_permanent>TRUE</print_status_permanent>
+					<out_port_inner_dim_name>iteration</out_port_inner_dim_name>
+					<out_port_inner_dim_addr_offset>1</out_port_inner_dim_addr_offset>
+				</module>
+			</cse_chain>
+		</configuration>
+		<result>
+			<module name="error_rates_decoding">
+				<status_out name="num_total_bits">
+					<value>3360</value>
+				</status_out>
+				<status_out name="num_diff_bits">
+					<value iteration="1">74</value>
+					<value iteration="2">65</value>
+					<value iteration="3">62</value>
+					<value iteration="4">44</value>
+					<value iteration="5">40</value>
+					<value iteration="6">47</value>
+					<value iteration="7">47</value>
+					<value iteration="8">51</value>
+					<value iteration="9">46</value>
+					<value iteration="10">43</value>
+				</status_out>
+				<status_out name="error_rate_bits">
+					<value iteration="1">0.0220238</value>
+					<value iteration="2">0.0193452</value>
+					<value iteration="3">0.0184524</value>
+					<value iteration="4">0.0130952</value>
+					<value iteration="5">0.0119048</value>
+					<value iteration="6">0.0139881</value>
+					<value iteration="7">0.0139881</value>
+					<value iteration="8">0.0151786</value>
+					<value iteration="9">0.0136905</value>
+					<value iteration="10">0.0127976</value>
+				</status_out>
+				<status_out name="num_total_blocks">
+					<value>10</value>
+				</status_out>
+				<status_out name="num_diff_blocks">
+					<value iteration="1">10</value>
+					<value iteration="2">10</value>
+					<value iteration="3">9</value>
+					<value iteration="4">8</value>
+					<value iteration="5">6</value>
+					<value iteration="6">7</value>
+					<value iteration="7">7</value>
+					<value iteration="8">6</value>
+					<value iteration="9">6</value>
+					<value iteration="10">6</value>
+				</status_out>
+				<status_out name="error_rate_blocks">
+					<value iteration="1">1</value>
+					<value iteration="2">1</value>
+					<value iteration="3">0.9</value>
+					<value iteration="4">0.8</value>
+					<value iteration="5">0.6</value>
+					<value iteration="6">0.7</value>
+					<value iteration="7">0.7</value>
+					<value iteration="8">0.6</value>
+					<value iteration="9">0.6</value>
+					<value iteration="10">0.6</value>
+				</status_out>
+			</module>
+			<module name="Decoder_LDPC_IEEE_802_11ad">
+				<status_out name="mean_iterations">
+					<value dim_0="1">1</value>
+					<value dim_0="2">2</value>
+					<value dim_0="3">3</value>
+					<value dim_0="4">4</value>
+					<value dim_0="5">5</value>
+					<value dim_0="6">6</value>
+					<value dim_0="7">6.9</value>
+					<value dim_0="8">7.7</value>
+					<value dim_0="9">8.4</value>
+					<value dim_0="10">9</value>
+				</status_out>
+				<status_out name="flipped_bits">
+					<value dim_0="0">0</value>
+					<value dim_0="1">18</value>
+					<value dim_0="2">13</value>
+					<value dim_0="3">6</value>
+					<value dim_0="4">3</value>
+					<value dim_0="5">11</value>
+					<value dim_0="6">13</value>
+					<value dim_0="7">18</value>
+					<value dim_0="8">15</value>
+					<value dim_0="9">9</value>
+				</status_out>
+			</module>
+		</result>
+	</iter_var>
+	<iter_var name="eb_n0" value="6">
+		<configuration>
+			<cse_chain>
+				<global>
+					<variable name="num_info_bits">336</variable>
+					<variable name="num_other_bits">336</variable>
+					<variable name="ldpc_code_rate">IEEE_802_11ad_P42_N672_R081</variable>
+					<variable name="num_bits_per_symbol">2</variable>
+					<variable name="mapping">MAP_QPSK</variable>
+					<variable name="num_ldpc_inner_iterations">10</variable>
+					<variable name="bw_fl2fix">6</variable>
+					<variable name="bw_fl2fix_fract">2</variable>
+					<variable name="bw_dec_app">9</variable>
+					<variable name="bw_dec_ext">6</variable>
+					<variable name="bw_dec_fract">2</variable>
+					<iter>
+						<variable name="eb_n0">6</variable>
+					</iter>
+					<variable name="es_n0">6</variable>
+					<variable name="noise_variance">0.251189</variable>
+				</global>
+				<param_unit unique_id="Param_Unit_SNR">
+					<instance_name>SNR</instance_name>
+					<input_snr>6</input_snr>
+					<input_type>EB_N0</input_type>
+					<num_info_bits>336</num_info_bits>
+					<num_other_bits>336</num_other_bits>
+					<num_bits_per_symbol>2</num_bits_per_symbol>
+					<param name="noise_variance">0.251189</param>
+					<param name="eb_n0">6</param>
+					<param name="es_n0">6</param>
+				</param_unit>
+				<module>
+					<instance_name>Source_Bits</instance_name>
+					<num_bits>336</num_bits>
+					<crc_poly>0</crc_poly>
+					<mode>Random</mode>
+					<start_seed>7878089</start_seed>
+				</module>
+				<module>
+					<instance_name>Encoder_LDPC_IEEE_802_11ad</instance_name>
+					<ldpc_code>IEEE_802_11ad_P42_N672_R081</ldpc_code>
+				</module>
+				<module>
+					<instance_name>Mapper</instance_name>
+					<mapping>MAP_QPSK</mapping>
+				</module>
+				<module>
+					<instance_name>Channel_AWGN</instance_name>
+					<noise_variance>0.251189</noise_variance>
+					<start_seed>12424</start_seed>
+				</module>
+				<module>
+					<instance_name>Demapper</instance_name>
+					<mapping>MAP_QPSK</mapping>
+					<noise_variance>0.251189</noise_variance>
+					<channel_reliability>OPTIMAL_CRF</channel_reliability>
+				</module>
+				<module>
+					<instance_name>Converter_Float_Fixpoint</instance_name>
+					<bw_output>6</bw_output>
+					<bw_output_fract>2</bw_output_fract>
+				</module>
+				<module>
+					<instance_name>Decoder_LDPC_IEEE_802_11ad</instance_name>
+					<bw_fract>2</bw_fract>
+					<bw_extr>6</bw_extr>
+					<bw_app>9</bw_app>
+					<esf_factor>0.875</esf_factor>
+					<dec_algorithm>MIN_SUM</dec_algorithm>
+					<scheduling>LAYERED</scheduling>
+					<ldpc_code>IEEE_802_11ad_P42_N672_R081</ldpc_code>
+					<num_iterations>10</num_iterations>
+					<num_lambda_min>3</num_lambda_min>
+					<app_parity_check>TRUE</app_parity_check>
+					<num_partitions>2</num_partitions>
+					<threshold>16</threshold>
+				</module>
+				<module>
+					<instance_name>error_rates_decoding</instance_name>
+					<max_num_diff_blocks>10</max_num_diff_blocks>
+					<max_num_total_blocks>10</max_num_total_blocks>
+					<print_status_permanent>TRUE</print_status_permanent>
+					<out_port_inner_dim_name>iteration</out_port_inner_dim_name>
+					<out_port_inner_dim_addr_offset>1</out_port_inner_dim_addr_offset>
+				</module>
+			</cse_chain>
+		</configuration>
+		<result>
+			<module name="error_rates_decoding">
+				<status_out name="num_total_bits">
+					<value>3360</value>
+				</status_out>
+				<status_out name="num_diff_bits">
+					<value iteration="1">23</value>
+					<value iteration="2">3</value>
+					<value iteration="3">1</value>
+					<value iteration="4">1</value>
+					<value iteration="5">1</value>
+					<value iteration="6">1</value>
+					<value iteration="7">1</value>
+					<value iteration="8">1</value>
+					<value iteration="9">1</value>
+					<value iteration="10">1</value>
+				</status_out>
+				<status_out name="error_rate_bits">
+					<value iteration="1">0.00684524</value>
+					<value iteration="2">0.000892857</value>
+					<value iteration="3">0.000297619</value>
+					<value iteration="4">0.000297619</value>
+					<value iteration="5">0.000297619</value>
+					<value iteration="6">0.000297619</value>
+					<value iteration="7">0.000297619</value>
+					<value iteration="8">0.000297619</value>
+					<value iteration="9">0.000297619</value>
+					<value iteration="10">0.000297619</value>
+				</status_out>
+				<status_out name="num_total_blocks">
+					<value>10</value>
+				</status_out>
+				<status_out name="num_diff_blocks">
+					<value iteration="1">9</value>
+					<value iteration="2">2</value>
+					<value iteration="3">1</value>
+					<value iteration="4">1</value>
+					<value iteration="5">1</value>
+					<value iteration="6">1</value>
+					<value iteration="7">1</value>
+					<value iteration="8">1</value>
+					<value iteration="9">1</value>
+					<value iteration="10">1</value>
+				</status_out>
+				<status_out name="error_rate_blocks">
+					<value iteration="1">0.9</value>
+					<value iteration="2">0.2</value>
+					<value iteration="3">0.1</value>
+					<value iteration="4">0.1</value>
+					<value iteration="5">0.1</value>
+					<value iteration="6">0.1</value>
+					<value iteration="7">0.1</value>
+					<value iteration="8">0.1</value>
+					<value iteration="9">0.1</value>
+					<value iteration="10">0.1</value>
+				</status_out>
+			</module>
+			<module name="Decoder_LDPC_IEEE_802_11ad">
+				<status_out name="mean_iterations">
+					<value dim_0="1">1</value>
+					<value dim_0="2">2</value>
+					<value dim_0="3">3</value>
+					<value dim_0="4">4</value>
+					<value dim_0="5">4.2</value>
+					<value dim_0="6">4.3</value>
+					<value dim_0="7">4.4</value>
+					<value dim_0="8">4.5</value>
+					<value dim_0="9">4.6</value>
+					<value dim_0="10">4.7</value>
+				</status_out>
+				<status_out name="flipped_bits">
+					<value dim_0="0">0</value>
+					<value dim_0="1">2</value>
+					<value dim_0="2">0</value>
+					<value dim_0="3">0</value>
+					<value dim_0="4">0</value>
+					<value dim_0="5">0</value>
+					<value dim_0="6">0</value>
+					<value dim_0="7">0</value>
+					<value dim_0="8">0</value>
+					<value dim_0="9">0</value>
+				</status_out>
+			</module>
+		</result>
+	</iter_var>
+	<iter_var name="eb_n0" value="7">
+		<configuration>
+			<cse_chain>
+				<global>
+					<variable name="num_info_bits">336</variable>
+					<variable name="num_other_bits">336</variable>
+					<variable name="ldpc_code_rate">IEEE_802_11ad_P42_N672_R081</variable>
+					<variable name="num_bits_per_symbol">2</variable>
+					<variable name="mapping">MAP_QPSK</variable>
+					<variable name="num_ldpc_inner_iterations">10</variable>
+					<variable name="bw_fl2fix">6</variable>
+					<variable name="bw_fl2fix_fract">2</variable>
+					<variable name="bw_dec_app">9</variable>
+					<variable name="bw_dec_ext">6</variable>
+					<variable name="bw_dec_fract">2</variable>
+					<iter>
+						<variable name="eb_n0">7</variable>
+					</iter>
+					<variable name="es_n0">7</variable>
+					<variable name="noise_variance">0.199526</variable>
+				</global>
+				<param_unit unique_id="Param_Unit_SNR">
+					<instance_name>SNR</instance_name>
+					<input_snr>7</input_snr>
+					<input_type>EB_N0</input_type>
+					<num_info_bits>336</num_info_bits>
+					<num_other_bits>336</num_other_bits>
+					<num_bits_per_symbol>2</num_bits_per_symbol>
+					<param name="noise_variance">0.199526</param>
+					<param name="eb_n0">7</param>
+					<param name="es_n0">7</param>
+				</param_unit>
+				<module>
+					<instance_name>Source_Bits</instance_name>
+					<num_bits>336</num_bits>
+					<crc_poly>0</crc_poly>
+					<mode>Random</mode>
+					<start_seed>7878089</start_seed>
+				</module>
+				<module>
+					<instance_name>Encoder_LDPC_IEEE_802_11ad</instance_name>
+					<ldpc_code>IEEE_802_11ad_P42_N672_R081</ldpc_code>
+				</module>
+				<module>
+					<instance_name>Mapper</instance_name>
+					<mapping>MAP_QPSK</mapping>
+				</module>
+				<module>
+					<instance_name>Channel_AWGN</instance_name>
+					<noise_variance>0.199526</noise_variance>
+					<start_seed>12424</start_seed>
+				</module>
+				<module>
+					<instance_name>Demapper</instance_name>
+					<mapping>MAP_QPSK</mapping>
+					<noise_variance>0.199526</noise_variance>
+					<channel_reliability>OPTIMAL_CRF</channel_reliability>
+				</module>
+				<module>
+					<instance_name>Converter_Float_Fixpoint</instance_name>
+					<bw_output>6</bw_output>
+					<bw_output_fract>2</bw_output_fract>
+				</module>
+				<module>
+					<instance_name>Decoder_LDPC_IEEE_802_11ad</instance_name>
+					<bw_fract>2</bw_fract>
+					<bw_extr>6</bw_extr>
+					<bw_app>9</bw_app>
+					<esf_factor>0.875</esf_factor>
+					<dec_algorithm>MIN_SUM</dec_algorithm>
+					<scheduling>LAYERED</scheduling>
+					<ldpc_code>IEEE_802_11ad_P42_N672_R081</ldpc_code>
+					<num_iterations>10</num_iterations>
+					<num_lambda_min>3</num_lambda_min>
+					<app_parity_check>TRUE</app_parity_check>
+					<num_partitions>2</num_partitions>
+					<threshold>16</threshold>
+				</module>
+				<module>
+					<instance_name>error_rates_decoding</instance_name>
+					<max_num_diff_blocks>10</max_num_diff_blocks>
+					<max_num_total_blocks>10</max_num_total_blocks>
+					<print_status_permanent>TRUE</print_status_permanent>
+					<out_port_inner_dim_name>iteration</out_port_inner_dim_name>
+					<out_port_inner_dim_addr_offset>1</out_port_inner_dim_addr_offset>
+				</module>
+			</cse_chain>
+		</configuration>
+		<result>
+			<module name="error_rates_decoding">
+				<status_out name="num_total_bits">
+					<value>3360</value>
+				</status_out>
+				<status_out name="num_diff_bits">
+					<value iteration="1">5</value>
+					<value iteration="2">0</value>
+					<value iteration="3">0</value>
+					<value iteration="4">0</value>
+					<value iteration="5">0</value>
+					<value iteration="6">0</value>
+					<value iteration="7">0</value>
+					<value iteration="8">0</value>
+					<value iteration="9">0</value>
+					<value iteration="10">0</value>
+				</status_out>
+				<status_out name="error_rate_bits">
+					<value iteration="1">0.0014881</value>
+					<value iteration="2">0</value>
+					<value iteration="3">0</value>
+					<value iteration="4">0</value>
+					<value iteration="5">0</value>
+					<value iteration="6">0</value>
+					<value iteration="7">0</value>
+					<value iteration="8">0</value>
+					<value iteration="9">0</value>
+					<value iteration="10">0</value>
+				</status_out>
+				<status_out name="num_total_blocks">
+					<value>10</value>
+				</status_out>
+				<status_out name="num_diff_blocks">
+					<value iteration="1">3</value>
+					<value iteration="2">0</value>
+					<value iteration="3">0</value>
+					<value iteration="4">0</value>
+					<value iteration="5">0</value>
+					<value iteration="6">0</value>
+					<value iteration="7">0</value>
+					<value iteration="8">0</value>
+					<value iteration="9">0</value>
+					<value iteration="10">0</value>
+				</status_out>
+				<status_out name="error_rate_blocks">
+					<value iteration="1">0.3</value>
+					<value iteration="2">0</value>
+					<value iteration="3">0</value>
+					<value iteration="4">0</value>
+					<value iteration="5">0</value>
+					<value iteration="6">0</value>
+					<value iteration="7">0</value>
+					<value iteration="8">0</value>
+					<value iteration="9">0</value>
+					<value iteration="10">0</value>
+				</status_out>
+			</module>
+			<module name="Decoder_LDPC_IEEE_802_11ad">
+				<status_out name="mean_iterations">
+					<value dim_0="1">1</value>
+					<value dim_0="2">2</value>
+					<value dim_0="3">3</value>
+					<value dim_0="4">3.5</value>
+					<value dim_0="5">3.5</value>
+					<value dim_0="6">3.5</value>
+					<value dim_0="7">3.5</value>
+					<value dim_0="8">3.5</value>
+					<value dim_0="9">3.5</value>
+					<value dim_0="10">3.5</value>
+				</status_out>
+				<status_out name="flipped_bits">
+					<value dim_0="0">0</value>
+					<value dim_0="1">2</value>
+					<value dim_0="2">0</value>
+					<value dim_0="3">0</value>
+					<value dim_0="4">0</value>
+					<value dim_0="5">0</value>
+					<value dim_0="6">0</value>
+					<value dim_0="7">0</value>
+					<value dim_0="8">0</value>
+					<value dim_0="9">0</value>
+				</status_out>
+			</module>
+		</result>
+	</iter_var>
+	<iter_var name="eb_n0" value="8">
+		<configuration>
+			<cse_chain>
+				<global>
+					<variable name="num_info_bits">336</variable>
+					<variable name="num_other_bits">336</variable>
+					<variable name="ldpc_code_rate">IEEE_802_11ad_P42_N672_R081</variable>
+					<variable name="num_bits_per_symbol">2</variable>
+					<variable name="mapping">MAP_QPSK</variable>
+					<variable name="num_ldpc_inner_iterations">10</variable>
+					<variable name="bw_fl2fix">6</variable>
+					<variable name="bw_fl2fix_fract">2</variable>
+					<variable name="bw_dec_app">9</variable>
+					<variable name="bw_dec_ext">6</variable>
+					<variable name="bw_dec_fract">2</variable>
+					<iter>
+						<variable name="eb_n0">8</variable>
+					</iter>
+					<variable name="es_n0">8</variable>
+					<variable name="noise_variance">0.158489</variable>
+				</global>
+				<param_unit unique_id="Param_Unit_SNR">
+					<instance_name>SNR</instance_name>
+					<input_snr>8</input_snr>
+					<input_type>EB_N0</input_type>
+					<num_info_bits>336</num_info_bits>
+					<num_other_bits>336</num_other_bits>
+					<num_bits_per_symbol>2</num_bits_per_symbol>
+					<param name="noise_variance">0.158489</param>
+					<param name="eb_n0">8</param>
+					<param name="es_n0">8</param>
+				</param_unit>
+				<module>
+					<instance_name>Source_Bits</instance_name>
+					<num_bits>336</num_bits>
+					<crc_poly>0</crc_poly>
+					<mode>Random</mode>
+					<start_seed>7878089</start_seed>
+				</module>
+				<module>
+					<instance_name>Encoder_LDPC_IEEE_802_11ad</instance_name>
+					<ldpc_code>IEEE_802_11ad_P42_N672_R081</ldpc_code>
+				</module>
+				<module>
+					<instance_name>Mapper</instance_name>
+					<mapping>MAP_QPSK</mapping>
+				</module>
+				<module>
+					<instance_name>Channel_AWGN</instance_name>
+					<noise_variance>0.158489</noise_variance>
+					<start_seed>12424</start_seed>
+				</module>
+				<module>
+					<instance_name>Demapper</instance_name>
+					<mapping>MAP_QPSK</mapping>
+					<noise_variance>0.158489</noise_variance>
+					<channel_reliability>OPTIMAL_CRF</channel_reliability>
+				</module>
+				<module>
+					<instance_name>Converter_Float_Fixpoint</instance_name>
+					<bw_output>6</bw_output>
+					<bw_output_fract>2</bw_output_fract>
+				</module>
+				<module>
+					<instance_name>Decoder_LDPC_IEEE_802_11ad</instance_name>
+					<bw_fract>2</bw_fract>
+					<bw_extr>6</bw_extr>
+					<bw_app>9</bw_app>
+					<esf_factor>0.875</esf_factor>
+					<dec_algorithm>MIN_SUM</dec_algorithm>
+					<scheduling>LAYERED</scheduling>
+					<ldpc_code>IEEE_802_11ad_P42_N672_R081</ldpc_code>
+					<num_iterations>10</num_iterations>
+					<num_lambda_min>3</num_lambda_min>
+					<app_parity_check>TRUE</app_parity_check>
+					<num_partitions>2</num_partitions>
+					<threshold>16</threshold>
+				</module>
+				<module>
+					<instance_name>error_rates_decoding</instance_name>
+					<max_num_diff_blocks>10</max_num_diff_blocks>
+					<max_num_total_blocks>10</max_num_total_blocks>
+					<print_status_permanent>TRUE</print_status_permanent>
+					<out_port_inner_dim_name>iteration</out_port_inner_dim_name>
+					<out_port_inner_dim_addr_offset>1</out_port_inner_dim_addr_offset>
+				</module>
+			</cse_chain>
+		</configuration>
+		<result>
+			<module name="error_rates_decoding">
+				<status_out name="num_total_bits">
+					<value>3360</value>
+				</status_out>
+				<status_out name="num_diff_bits">
+					<value iteration="1">0</value>
+					<value iteration="2">0</value>
+					<value iteration="3">0</value>
+					<value iteration="4">0</value>
+					<value iteration="5">0</value>
+					<value iteration="6">0</value>
+					<value iteration="7">0</value>
+					<value iteration="8">0</value>
+					<value iteration="9">0</value>
+					<value iteration="10">0</value>
+				</status_out>
+				<status_out name="error_rate_bits">
+					<value iteration="1">0</value>
+					<value iteration="2">0</value>
+					<value iteration="3">0</value>
+					<value iteration="4">0</value>
+					<value iteration="5">0</value>
+					<value iteration="6">0</value>
+					<value iteration="7">0</value>
+					<value iteration="8">0</value>
+					<value iteration="9">0</value>
+					<value iteration="10">0</value>
+				</status_out>
+				<status_out name="num_total_blocks">
+					<value>10</value>
+				</status_out>
+				<status_out name="num_diff_blocks">
+					<value iteration="1">0</value>
+					<value iteration="2">0</value>
+					<value iteration="3">0</value>
+					<value iteration="4">0</value>
+					<value iteration="5">0</value>
+					<value iteration="6">0</value>
+					<value iteration="7">0</value>
+					<value iteration="8">0</value>
+					<value iteration="9">0</value>
+					<value iteration="10">0</value>
+				</status_out>
+				<status_out name="error_rate_blocks">
+					<value iteration="1">0</value>
+					<value iteration="2">0</value>
+					<value iteration="3">0</value>
+					<value iteration="4">0</value>
+					<value iteration="5">0</value>
+					<value iteration="6">0</value>
+					<value iteration="7">0</value>
+					<value iteration="8">0</value>
+					<value iteration="9">0</value>
+					<value iteration="10">0</value>
+				</status_out>
+			</module>
+			<module name="Decoder_LDPC_IEEE_802_11ad">
+				<status_out name="mean_iterations">
+					<value dim_0="1">1</value>
+					<value dim_0="2">2</value>
+					<value dim_0="3">3</value>
+					<value dim_0="4">3.1</value>
+					<value dim_0="5">3.1</value>
+					<value dim_0="6">3.1</value>
+					<value dim_0="7">3.1</value>
+					<value dim_0="8">3.1</value>
+					<value dim_0="9">3.1</value>
+					<value dim_0="10">3.1</value>
+				</status_out>
+				<status_out name="flipped_bits">
+					<value dim_0="0">0</value>
+					<value dim_0="1">0</value>
+					<value dim_0="2">0</value>
+					<value dim_0="3">0</value>
+					<value dim_0="4">0</value>
+					<value dim_0="5">0</value>
+					<value dim_0="6">0</value>
+					<value dim_0="7">0</value>
+					<value dim_0="8">0</value>
+					<value dim_0="9">0</value>
+				</status_out>
+			</module>
+		</result>
+	</iter_var>
+	<iter_var name="eb_n0" value="9">
+		<configuration>
+			<cse_chain>
+				<global>
+					<variable name="num_info_bits">336</variable>
+					<variable name="num_other_bits">336</variable>
+					<variable name="ldpc_code_rate">IEEE_802_11ad_P42_N672_R081</variable>
+					<variable name="num_bits_per_symbol">2</variable>
+					<variable name="mapping">MAP_QPSK</variable>
+					<variable name="num_ldpc_inner_iterations">10</variable>
+					<variable name="bw_fl2fix">6</variable>
+					<variable name="bw_fl2fix_fract">2</variable>
+					<variable name="bw_dec_app">9</variable>
+					<variable name="bw_dec_ext">6</variable>
+					<variable name="bw_dec_fract">2</variable>
+					<iter>
+						<variable name="eb_n0">9</variable>
+					</iter>
+					<variable name="es_n0">9</variable>
+					<variable name="noise_variance">0.125893</variable>
+				</global>
+				<param_unit unique_id="Param_Unit_SNR">
+					<instance_name>SNR</instance_name>
+					<input_snr>9</input_snr>
+					<input_type>EB_N0</input_type>
+					<num_info_bits>336</num_info_bits>
+					<num_other_bits>336</num_other_bits>
+					<num_bits_per_symbol>2</num_bits_per_symbol>
+					<param name="noise_variance">0.125893</param>
+					<param name="eb_n0">9</param>
+					<param name="es_n0">9</param>
+				</param_unit>
+				<module>
+					<instance_name>Source_Bits</instance_name>
+					<num_bits>336</num_bits>
+					<crc_poly>0</crc_poly>
+					<mode>Random</mode>
+					<start_seed>7878089</start_seed>
+				</module>
+				<module>
+					<instance_name>Encoder_LDPC_IEEE_802_11ad</instance_name>
+					<ldpc_code>IEEE_802_11ad_P42_N672_R081</ldpc_code>
+				</module>
+				<module>
+					<instance_name>Mapper</instance_name>
+					<mapping>MAP_QPSK</mapping>
+				</module>
+				<module>
+					<instance_name>Channel_AWGN</instance_name>
+					<noise_variance>0.125893</noise_variance>
+					<start_seed>12424</start_seed>
+				</module>
+				<module>
+					<instance_name>Demapper</instance_name>
+					<mapping>MAP_QPSK</mapping>
+					<noise_variance>0.125893</noise_variance>
+					<channel_reliability>OPTIMAL_CRF</channel_reliability>
+				</module>
+				<module>
+					<instance_name>Converter_Float_Fixpoint</instance_name>
+					<bw_output>6</bw_output>
+					<bw_output_fract>2</bw_output_fract>
+				</module>
+				<module>
+					<instance_name>Decoder_LDPC_IEEE_802_11ad</instance_name>
+					<bw_fract>2</bw_fract>
+					<bw_extr>6</bw_extr>
+					<bw_app>9</bw_app>
+					<esf_factor>0.875</esf_factor>
+					<dec_algorithm>MIN_SUM</dec_algorithm>
+					<scheduling>LAYERED</scheduling>
+					<ldpc_code>IEEE_802_11ad_P42_N672_R081</ldpc_code>
+					<num_iterations>10</num_iterations>
+					<num_lambda_min>3</num_lambda_min>
+					<app_parity_check>TRUE</app_parity_check>
+					<num_partitions>2</num_partitions>
+					<threshold>16</threshold>
+				</module>
+				<module>
+					<instance_name>error_rates_decoding</instance_name>
+					<max_num_diff_blocks>10</max_num_diff_blocks>
+					<max_num_total_blocks>10</max_num_total_blocks>
+					<print_status_permanent>TRUE</print_status_permanent>
+					<out_port_inner_dim_name>iteration</out_port_inner_dim_name>
+					<out_port_inner_dim_addr_offset>1</out_port_inner_dim_addr_offset>
+				</module>
+			</cse_chain>
+		</configuration>
+		<result>
+			<module name="error_rates_decoding">
+				<status_out name="num_total_bits">
+					<value>3360</value>
+				</status_out>
+				<status_out name="num_diff_bits">
+					<value iteration="1">0</value>
+					<value iteration="2">0</value>
+					<value iteration="3">0</value>
+					<value iteration="4">0</value>
+					<value iteration="5">0</value>
+					<value iteration="6">0</value>
+					<value iteration="7">0</value>
+					<value iteration="8">0</value>
+					<value iteration="9">0</value>
+					<value iteration="10">0</value>
+				</status_out>
+				<status_out name="error_rate_bits">
+					<value iteration="1">0</value>
+					<value iteration="2">0</value>
+					<value iteration="3">0</value>
+					<value iteration="4">0</value>
+					<value iteration="5">0</value>
+					<value iteration="6">0</value>
+					<value iteration="7">0</value>
+					<value iteration="8">0</value>
+					<value iteration="9">0</value>
+					<value iteration="10">0</value>
+				</status_out>
+				<status_out name="num_total_blocks">
+					<value>10</value>
+				</status_out>
+				<status_out name="num_diff_blocks">
+					<value iteration="1">0</value>
+					<value iteration="2">0</value>
+					<value iteration="3">0</value>
+					<value iteration="4">0</value>
+					<value iteration="5">0</value>
+					<value iteration="6">0</value>
+					<value iteration="7">0</value>
+					<value iteration="8">0</value>
+					<value iteration="9">0</value>
+					<value iteration="10">0</value>
+				</status_out>
+				<status_out name="error_rate_blocks">
+					<value iteration="1">0</value>
+					<value iteration="2">0</value>
+					<value iteration="3">0</value>
+					<value iteration="4">0</value>
+					<value iteration="5">0</value>
+					<value iteration="6">0</value>
+					<value iteration="7">0</value>
+					<value iteration="8">0</value>
+					<value iteration="9">0</value>
+					<value iteration="10">0</value>
+				</status_out>
+			</module>
+			<module name="Decoder_LDPC_IEEE_802_11ad">
+				<status_out name="mean_iterations">
+					<value dim_0="1">1</value>
+					<value dim_0="2">2</value>
+					<value dim_0="3">2.7</value>
+					<value dim_0="4">2.7</value>
+					<value dim_0="5">2.7</value>
+					<value dim_0="6">2.7</value>
+					<value dim_0="7">2.7</value>
+					<value dim_0="8">2.7</value>
+					<value dim_0="9">2.7</value>
+					<value dim_0="10">2.7</value>
+				</status_out>
+				<status_out name="flipped_bits">
+					<value dim_0="0">0</value>
+					<value dim_0="1">0</value>
+					<value dim_0="2">0</value>
+					<value dim_0="3">0</value>
+					<value dim_0="4">0</value>
+					<value dim_0="5">0</value>
+					<value dim_0="6">0</value>
+					<value dim_0="7">0</value>
+					<value dim_0="8">0</value>
+					<value dim_0="9">0</value>
+				</status_out>
+			</module>
+		</result>
+	</iter_var>
+	<iter_var name="eb_n0" value="10">
+		<configuration>
+			<cse_chain>
+				<global>
+					<variable name="num_info_bits">336</variable>
+					<variable name="num_other_bits">336</variable>
+					<variable name="ldpc_code_rate">IEEE_802_11ad_P42_N672_R081</variable>
+					<variable name="num_bits_per_symbol">2</variable>
+					<variable name="mapping">MAP_QPSK</variable>
+					<variable name="num_ldpc_inner_iterations">10</variable>
+					<variable name="bw_fl2fix">6</variable>
+					<variable name="bw_fl2fix_fract">2</variable>
+					<variable name="bw_dec_app">9</variable>
+					<variable name="bw_dec_ext">6</variable>
+					<variable name="bw_dec_fract">2</variable>
+					<iter>
+						<variable name="eb_n0">10</variable>
+					</iter>
+					<variable name="es_n0">10</variable>
+					<variable name="noise_variance">0.1</variable>
+				</global>
+				<param_unit unique_id="Param_Unit_SNR">
+					<instance_name>SNR</instance_name>
+					<input_snr>10</input_snr>
+					<input_type>EB_N0</input_type>
+					<num_info_bits>336</num_info_bits>
+					<num_other_bits>336</num_other_bits>
+					<num_bits_per_symbol>2</num_bits_per_symbol>
+					<param name="noise_variance">0.1</param>
+					<param name="eb_n0">10</param>
+					<param name="es_n0">10</param>
+				</param_unit>
+				<module>
+					<instance_name>Source_Bits</instance_name>
+					<num_bits>336</num_bits>
+					<crc_poly>0</crc_poly>
+					<mode>Random</mode>
+					<start_seed>7878089</start_seed>
+				</module>
+				<module>
+					<instance_name>Encoder_LDPC_IEEE_802_11ad</instance_name>
+					<ldpc_code>IEEE_802_11ad_P42_N672_R081</ldpc_code>
+				</module>
+				<module>
+					<instance_name>Mapper</instance_name>
+					<mapping>MAP_QPSK</mapping>
+				</module>
+				<module>
+					<instance_name>Channel_AWGN</instance_name>
+					<noise_variance>0.1</noise_variance>
+					<start_seed>12424</start_seed>
+				</module>
+				<module>
+					<instance_name>Demapper</instance_name>
+					<mapping>MAP_QPSK</mapping>
+					<noise_variance>0.1</noise_variance>
+					<channel_reliability>OPTIMAL_CRF</channel_reliability>
+				</module>
+				<module>
+					<instance_name>Converter_Float_Fixpoint</instance_name>
+					<bw_output>6</bw_output>
+					<bw_output_fract>2</bw_output_fract>
+				</module>
+				<module>
+					<instance_name>Decoder_LDPC_IEEE_802_11ad</instance_name>
+					<bw_fract>2</bw_fract>
+					<bw_extr>6</bw_extr>
+					<bw_app>9</bw_app>
+					<esf_factor>0.875</esf_factor>
+					<dec_algorithm>MIN_SUM</dec_algorithm>
+					<scheduling>LAYERED</scheduling>
+					<ldpc_code>IEEE_802_11ad_P42_N672_R081</ldpc_code>
+					<num_iterations>10</num_iterations>
+					<num_lambda_min>3</num_lambda_min>
+					<app_parity_check>TRUE</app_parity_check>
+					<num_partitions>2</num_partitions>
+					<threshold>16</threshold>
+				</module>
+				<module>
+					<instance_name>error_rates_decoding</instance_name>
+					<max_num_diff_blocks>10</max_num_diff_blocks>
+					<max_num_total_blocks>10</max_num_total_blocks>
+					<print_status_permanent>TRUE</print_status_permanent>
+					<out_port_inner_dim_name>iteration</out_port_inner_dim_name>
+					<out_port_inner_dim_addr_offset>1</out_port_inner_dim_addr_offset>
+				</module>
+			</cse_chain>
+		</configuration>
+		<result>
+			<module name="error_rates_decoding">
+				<status_out name="num_total_bits">
+					<value>3360</value>
+				</status_out>
+				<status_out name="num_diff_bits">
+					<value iteration="1">0</value>
+					<value iteration="2">0</value>
+					<value iteration="3">0</value>
+					<value iteration="4">0</value>
+					<value iteration="5">0</value>
+					<value iteration="6">0</value>
+					<value iteration="7">0</value>
+					<value iteration="8">0</value>
+					<value iteration="9">0</value>
+					<value iteration="10">0</value>
+				</status_out>
+				<status_out name="error_rate_bits">
+					<value iteration="1">0</value>
+					<value iteration="2">0</value>
+					<value iteration="3">0</value>
+					<value iteration="4">0</value>
+					<value iteration="5">0</value>
+					<value iteration="6">0</value>
+					<value iteration="7">0</value>
+					<value iteration="8">0</value>
+					<value iteration="9">0</value>
+					<value iteration="10">0</value>
+				</status_out>
+				<status_out name="num_total_blocks">
+					<value>10</value>
+				</status_out>
+				<status_out name="num_diff_blocks">
+					<value iteration="1">0</value>
+					<value iteration="2">0</value>
+					<value iteration="3">0</value>
+					<value iteration="4">0</value>
+					<value iteration="5">0</value>
+					<value iteration="6">0</value>
+					<value iteration="7">0</value>
+					<value iteration="8">0</value>
+					<value iteration="9">0</value>
+					<value iteration="10">0</value>
+				</status_out>
+				<status_out name="error_rate_blocks">
+					<value iteration="1">0</value>
+					<value iteration="2">0</value>
+					<value iteration="3">0</value>
+					<value iteration="4">0</value>
+					<value iteration="5">0</value>
+					<value iteration="6">0</value>
+					<value iteration="7">0</value>
+					<value iteration="8">0</value>
+					<value iteration="9">0</value>
+					<value iteration="10">0</value>
+				</status_out>
+			</module>
+			<module name="Decoder_LDPC_IEEE_802_11ad">
+				<status_out name="mean_iterations">
+					<value dim_0="1">1</value>
+					<value dim_0="2">2</value>
+					<value dim_0="3">2.5</value>
+					<value dim_0="4">2.5</value>
+					<value dim_0="5">2.5</value>
+					<value dim_0="6">2.5</value>
+					<value dim_0="7">2.5</value>
+					<value dim_0="8">2.5</value>
+					<value dim_0="9">2.5</value>
+					<value dim_0="10">2.5</value>
+				</status_out>
+				<status_out name="flipped_bits">
+					<value dim_0="0">0</value>
+					<value dim_0="1">0</value>
+					<value dim_0="2">0</value>
+					<value dim_0="3">0</value>
+					<value dim_0="4">0</value>
+					<value dim_0="5">0</value>
+					<value dim_0="6">0</value>
+					<value dim_0="7">0</value>
+					<value dim_0="8">0</value>
+					<value dim_0="9">0</value>
+				</status_out>
+			</module>
+		</result>
+	</iter_var>
+</cse>

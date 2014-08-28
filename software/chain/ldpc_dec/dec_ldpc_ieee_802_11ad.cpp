@@ -19,7 +19,9 @@ using namespace std;
 
 namespace cse_lib {
 
-void Decoder_LDPC_IEEE_802_11ad::Set_LDPC_Parameters()
+
+template<class T>
+void Decoder_LDPC_IEEE_802_11ad<T>::Set_LDPC_Parameters()
 {
 
 	/*
@@ -90,7 +92,8 @@ void Decoder_LDPC_IEEE_802_11ad::Set_LDPC_Parameters()
 }
 
 
-void Decoder_LDPC_IEEE_802_11ad::Init()
+template<class T>
+void Decoder_LDPC_IEEE_802_11ad<T>::Init()
 {
 
 	// Set code and decoder parameters
@@ -121,7 +124,8 @@ void Decoder_LDPC_IEEE_802_11ad::Init()
 }
 
 
-int Decoder_LDPC_IEEE_802_11ad::Run()
+template<class T>
+int Decoder_LDPC_IEEE_802_11ad<T>::Run()
 {
 
 	unsigned int pchk_satisfied;
@@ -136,7 +140,7 @@ int Decoder_LDPC_IEEE_802_11ad::Run()
 		Init();
 
 	// Read the channel values and store them in app_ram_.
-	Init_APP_RAM(is_IRA_code_, input_bits_llr(), app_ram_);
+	this->Init_APP_RAM(is_IRA_code_, input_bits_llr(), app_ram_);
 
 	do
 	{
@@ -144,11 +148,11 @@ int Decoder_LDPC_IEEE_802_11ad::Run()
 		switch(scheduling())
 		{
 		case LAYERED:
-			pchk_satisfied = Decode_Layered(app_ram_, msg_ram_, iter);
+			pchk_satisfied = this->Decode_Layered(app_ram_, msg_ram_, iter);
 			break;
 
 		case TWO_PHASE:
-			pchk_satisfied = Decode_Two_Phase(app_ram_, msg_ram_, iter, app_parity_check());
+			pchk_satisfied = this->Decode_Two_Phase(app_ram_, msg_ram_, iter);
 			break;
 
 		default:
@@ -161,7 +165,7 @@ int Decoder_LDPC_IEEE_802_11ad::Run()
 		 * Read the app_ram_ and store APP values in output_bits_llr_app() and
 		 * hard decoded bits in output_bits buffer.
 		 */
-		Read_APP_RAM(app_ram_, iter, output_bits_llr_app(), output_bits());
+		this->Read_APP_RAM(app_ram_, iter, output_bits_llr_app(), output_bits());
 
 		// Check whether all parity checks were satisfied in the previous iteration.
 		last_iter = next_iter_is_last_iter;
@@ -192,7 +196,7 @@ int Decoder_LDPC_IEEE_802_11ad::Run()
 	 * in the software as well.
 	 */
 	} while (iter < num_iterations() &&
-	         last_iter == false);
+	         pchk_satisfied != num_check_nodes_);
 
 
     
@@ -203,7 +207,7 @@ int Decoder_LDPC_IEEE_802_11ad::Run()
 	iterations_performed().Write(iter);
 
 	// Get statistic about modified bits.
-	num_modified_systematic_bits().Write(Calc_Modified_Systematic_Bits(iter, input_bits_llr(), output_bits()));
+	num_modified_systematic_bits().Write(this->Calc_Modified_Systematic_Bits(iter, input_bits_llr(), output_bits()));
 
 	// Fill the output buffer and the status port for the remaining iterations.
 	for(unsigned int i = iter; i < num_iterations(); i++)
@@ -220,5 +224,8 @@ int Decoder_LDPC_IEEE_802_11ad::Run()
 
 	return 0;
 }
+
+template class Decoder_LDPC_IEEE_802_11ad<int>;
+template class Decoder_LDPC_IEEE_802_11ad<float>;
 }
 

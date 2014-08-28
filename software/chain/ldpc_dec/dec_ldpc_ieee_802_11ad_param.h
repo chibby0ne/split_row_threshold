@@ -15,6 +15,7 @@
 
 /*#include "../base/base_param.h"*/
 #include "dec_ldpc_bin_hw_share.h"
+#include "dec_ldpc_check_node_share.h"
 
 
 namespace cse_lib {
@@ -58,7 +59,7 @@ public:
 	Param<unsigned int> num_iterations;
 
 	/// Decoding Algorithm
-	Param<Decoder_LDPC_Binary_HW_Share::CHECK_NODE_ENUM> dec_algorithm;
+	Param<Decoder_LDPC_Check_Node_Share::CHECK_NODE_ENUM> dec_algorithm;
 
 	/// Number of messages to take in account for lambda-min algorithm
 	Param<unsigned int> num_lambda_min;
@@ -136,12 +137,12 @@ protected:
 		ldpc_code.Link_Value_String(IEEE_802_11AD_P42_N672_R075, "IEEE_802_11AD_P42_N672_R075");
 		ldpc_code.Link_Value_String(IEEE_802_11AD_P42_N672_R081, "IEEE_802_11AD_P42_N672_R081");
 
-		dec_algorithm.Link_Value_String(Decoder_LDPC_Binary_HW_Share::LAMBDA_MIN, "LAMBDA_MIN");
-		dec_algorithm.Link_Value_String(Decoder_LDPC_Binary_HW_Share::MIN_SUM,    "MIN_SUM");
-		dec_algorithm.Link_Value_String(Decoder_LDPC_Binary_HW_Share::MIN_SUM_SELF_CORRECTING,    "MIN_SUM_SELF_CORRECTING");
-		dec_algorithm.Link_Value_String(Decoder_LDPC_Binary_HW_Share::SPLIT_ROW,    "SPLIT_ROW");
-		dec_algorithm.Link_Value_String(Decoder_LDPC_Binary_HW_Share::SPLIT_ROW_IMPROVED,    "SPLIT_ROW_IMPROVED");
-		dec_algorithm.Link_Value_String(Decoder_LDPC_Binary_HW_Share::SPLIT_ROW_SELF_CORRECTING,    "SPLIT_ROW_SELF_CORRECTING");
+		dec_algorithm.Link_Value_String(Decoder_LDPC_Check_Node_Share::LAMBDA_MIN, "LAMBDA_MIN");
+		dec_algorithm.Link_Value_String(Decoder_LDPC_Check_Node_Share::MIN_SUM,    "MIN_SUM");
+		dec_algorithm.Link_Value_String(Decoder_LDPC_Check_Node_Share::MIN_SUM_SELF_CORRECTING,    "MIN_SUM_SELF_CORRECTING");
+		dec_algorithm.Link_Value_String(Decoder_LDPC_Check_Node_Share::SPLIT_ROW,    "SPLIT_ROW");
+		dec_algorithm.Link_Value_String(Decoder_LDPC_Check_Node_Share::SPLIT_ROW_IMPROVED,    "SPLIT_ROW_IMPROVED");
+		dec_algorithm.Link_Value_String(Decoder_LDPC_Check_Node_Share::SPLIT_ROW_SELF_CORRECTING,    "SPLIT_ROW_SELF_CORRECTING");
 		scheduling.Link_Value_String(TWO_PHASE, "TWO_PHASE");
 		scheduling.Link_Value_String(LAYERED,   "LAYERED");
 
@@ -156,8 +157,8 @@ protected:
         num_partitions.Init(2, "num_partitions", param_list_);
         threshold.Init(16, "threshold", param_list_);
 
-//		dec_algorithm.Init(Decoder_LDPC_Binary_HW_Share::MIN_SUM, "dec_algorithm", param_list_);
-		dec_algorithm.Init(Decoder_LDPC_Binary_HW_Share::MIN_SUM_SELF_CORRECTING, "dec_algorithm", param_list_);
+		dec_algorithm.Init(Decoder_LDPC_Check_Node_Share::MIN_SUM, "dec_algorithm", param_list_);
+		// dec_algorithm.Init(Decoder_LDPC_Check_Node_Share::MIN_SUM_SELF_CORRECTING, "dec_algorithm", param_list_);
 		scheduling.Init(LAYERED, "scheduling", param_list_);
 
 		ldpc_code.Init(IEEE_802_11AD_P42_N672_R050, "ldpc_code", param_list_);

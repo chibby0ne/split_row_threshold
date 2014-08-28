@@ -39,14 +39,13 @@ int main(int argc, char* argv[]) {
 
 	Mapper mapper;
 
-	Converter_Float_Fixpoint<float, int> converter;
+	Converter_Float_Fixpoint<float, int> converter;     // for integer
 
 	Channel_AWGN channel;
 
 	Demapper demapper;
 
-	// Decoder_LDPC_IEEE_802_11ad<int> decoder;
-	Decoder_LDPC_IEEE_802_11ad decoder;
+	Decoder_LDPC_IEEE_802_11ad<float> decoder;
 
 	Statistics_Error_Rates<2> error_rates_decoding;
 	error_rates_decoding.instance_name("error_rates_decoding");
@@ -84,12 +83,12 @@ int main(int argc, char* argv[]) {
 	// Connect modules
 	encoder.input_bits(source_bits.output_bits());
 	mapper.input_bits(encoder.output_bits());
-	// mapper.input_bits(source_bits.output_bits());
 	channel.input_symb(mapper.output_symb());
 	demapper.input_symb(channel.output_symb());
 	converter.input(demapper.output_bits_llr());
 
-	decoder.input_bits_llr(converter.output());
+	decoder.input_bits_llr(demapper.output_bits_llr());     // for float
+	// decoder.input_bits_llr(converter.output());          // for integer
 
 	error_rates_decoding.input_bits_ref(source_bits.output_bits());
 	error_rates_decoding.input_bits(decoder.output_bits());
@@ -120,7 +119,7 @@ int main(int argc, char* argv[]) {
 			channel.Run();
 
 			demapper.Run();
-			converter.Run();
+			// converter.Run();         // comment for float
 
             // if (codewords == 0) {
             //     input_decoder << "SNR: " << snr << endl;
