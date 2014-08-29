@@ -214,12 +214,12 @@ int Decoder_LDPC_IEEE_802_11ad<T>::Run()
 	{
 		mean_iterations(i + 1)().Write(iter);
 		output_bits_llr_app()[i] = output_bits_llr_app()[iter - 1];
-		output_bits()[i]         = output_bits()[iter - 1];
+		// output_bits()[i]         = output_bits()[iter - 1];
         
         // writing to file with 2 that way I can easily discern the repeated ones and deleted them
-        // for (unsigned int j = 0; j != 672; j++) {
-        //     output_bits()[i][j] = 2;
-        // }
+        for (unsigned int j = 0; j != num_variable_nodes_; j++) {
+            output_bits()[i][j] = 2;
+        }
 	}
 
 	return 0;

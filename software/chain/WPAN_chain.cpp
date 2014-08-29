@@ -16,8 +16,8 @@ using namespace cse_lib;
 
 int main(int argc, char* argv[]) {
 
-    // int codewords = 0;
-    // int snr = 1;
+    int codewords = 0;
+    int snr = 1;
 
 	string configfile = "config.xml";
 	if (argc >= 2)
@@ -45,13 +45,13 @@ int main(int argc, char* argv[]) {
 
 	Demapper demapper;
 
-	Decoder_LDPC_IEEE_802_11ad<float> decoder;
+	Decoder_LDPC_IEEE_802_11ad<int> decoder;
+	// Decoder_LDPC_IEEE_802_11ad<float> decoder;
 
 	Statistics_Error_Rates<2> error_rates_decoding;
 	error_rates_decoding.instance_name("error_rates_decoding");
 
     // files used to write values
-    // ofstream input_source;
     ofstream input_decoder;
     ofstream output_decoder;
 
@@ -74,8 +74,8 @@ int main(int argc, char* argv[]) {
     // input_decoder.open("input_decoder_allsnr_r075.txt");
     // output_decoder.open("output_decoder_allsnr_r075.txt");
     
-    // input_decoder.open("input_decoder_allsnr_r081.txt");
-    // output_decoder.open("output_decoder_allsnr_r081.txt");
+    input_decoder.open("input_decoder_allsnr_r081.txt");
+    output_decoder.open("output_decoder_allsnr_r081.txt");
 
 
 
@@ -87,8 +87,8 @@ int main(int argc, char* argv[]) {
 	demapper.input_symb(channel.output_symb());
 	converter.input(demapper.output_bits_llr());
 
-	decoder.input_bits_llr(demapper.output_bits_llr());     // for float
-	// decoder.input_bits_llr(converter.output());          // for integer
+	// decoder.input_bits_llr(demapper.output_bits_llr());     // for float
+	decoder.input_bits_llr(converter.output());          // for integer
 
 	error_rates_decoding.input_bits_ref(source_bits.output_bits());
 	error_rates_decoding.input_bits(decoder.output_bits());
@@ -119,31 +119,31 @@ int main(int argc, char* argv[]) {
 			channel.Run();
 
 			demapper.Run();
-			// converter.Run();         // comment for float
+			converter.Run();         // comment for float
 
-            // if (codewords == 0) {
-            //     input_decoder << "SNR: " << snr << endl;
-            // }
-            // input_decoder << "Starting codeword" << endl;
-            // input_decoder << decoder.input_bits_llr() << endl;
-            // input_decoder << "Ending codeword" << endl;
+            if (codewords == 0) {
+                input_decoder << "SNR: " << snr << endl;
+            }
+            input_decoder << "Starting codeword" << endl;
+            input_decoder << decoder.input_bits_llr() << endl;
+            input_decoder << "Ending codeword" << endl;
 
 
             decoder.Run();
 
 
-            // if (codewords == 0) {
-            //     output_decoder << "SNR: " << snr << endl;
-            // }
-            // output_decoder << "Starting codeword" << endl;
-            // output_decoder << decoder.output_bits() << endl;
-            // output_decoder << "Ending codeword" << endl;
-            //
-            // codewords++;
-            // if (codewords == 10) {
-            //     snr++;
-            //     codewords = 0;
-            // }
+            if (codewords == 0) {
+                output_decoder << "SNR: " << snr << endl;
+            }
+            output_decoder << "Starting codeword" << endl;
+            output_decoder << decoder.output_bits() << endl;
+            output_decoder << "Ending codeword" << endl;
+
+            codewords++;
+            if (codewords == 10) {
+                snr++;
+                codewords = 0;
+            }
 
             result = error_rates_decoding.Run(); 
 		} while (result == 0);
